@@ -14,4 +14,4 @@ title: About(关于)
 03年生人~<br>
 
 
-Thanks for reading!
+Thanks for visiting!
