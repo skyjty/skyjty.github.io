@@ -1,0 +1,294 @@
+---
+layout: post
+title:  Jekyll部署文档
+date:   2024-07-09 20:00:00 +0800
+last_change_date: 2024-07-12 20:00:00 +0800
+categories: web
+brief_introduction: 从安装linux系统开始到部署实现自己的博客
+tags: Jekyll web
+related_posts: Welcome to Jekyll!
+---
+
+# Jekyll部署文档
+
+- [Jekyll部署文档](#jekyll部署文档)
+  - [0 概述](#0-概述)
+    - [0.1 什么是Jekyll](#01-什么是jekyll)
+    - [0.2 为什么是linux，为什么是双系统](#02-为什么是linux为什么是双系统)
+    - [0.3 需求](#03-需求)
+  - [1 linux \& windows双系统的安装](#1-linux--windows双系统的安装)
+    - [1.1 win10的重装](#11-win10的重装)
+    - [1.2 linux(ubbutu)的安装](#12-linuxubbutu的安装)
+  - [2 Jekyll与其依赖安装](#2-jekyll与其依赖安装)
+    - [2.1 更新系统与依赖安装](#21-更新系统与依赖安装)
+    - [2.2 安装Jekyll](#22-安装jekyll)
+  - [3 Jekyll使用准备](#3-jekyll使用准备)
+    - [3.1 未成功方法](#31-未成功方法)
+    - [3.2 网络测试](#32-网络测试)
+    - [3.3 安装并使用WinSCP](#33-安装并使用winscp)
+    - [3.4 设置同步文件](#34-设置同步文件)
+  - [4 Jekyll使用](#4-jekyll使用)
+    - [4.1 文件结构](#41-文件结构)
+    - [4.2 我的Jekyll修改过程](#42-我的jekyll修改过程)
+
+<br>
+
+## 0 概述
+本文档旨在记录笔者从头开始在linux系统上部署Jekyll以部署博客的全过程，以备不时之需。
+准备工具：
+- u盘(8G或以上)1或2个；
+- 电脑一台(笔者电脑硬盘为512G)；
+- 一颗不畏挫败的心。
+
+在准备之前，你应该先对Jekyll有一个初步的了解，并明确你需要用它来干什么。
+
+### 0.1 什么是Jekyll
+Jekyll是什么？让我们来看看[官网](https://jekyllcn.com/docs/home/)是怎么说的：
+```
+Jekyll 是一个简单的博客形态的静态站点生产机器。
+它有一个模版目录，其中包含原始文本格式的文档，通过一个转换器（如 Markdown）和我们的 Liquid 渲染器转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。
+Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的。
+```
+GitHub Page是github免费提供的一项服务，允许用户通过自己的项目搭建一个博客，而Jekyll是一个方便构建自己项目并更新这个博客的工具。
+
+### 0.2 为什么是linux，为什么是双系统
+- Jekyll对Windows的支持较差，配置似乎不太方便，后续许多插件也不会兼容Windows。
+- 再来说说使用双系统的原因。使用linux有三种选择，虚拟机，WSL，以及安装Linux系统。
+  - 虚拟机方案是最简单的，但是也是最受限制的，如果需要使用建议[安装Vmare workstation](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware+Workstation+Pro)，最新版本已对个人用户免费。笔者个人认为虚拟机性能较差，同时操作较为复杂，不作考虑；
+  - WSL(Windows Subsystem for Linux)是微软推出的的可以在windows下运行linux系统的功能，但由于笔者电脑划分C盘过小且WSL提供的ubuntu没有图形化界面，故不做考虑；
+- 最终选择安装linux系统。
+
+### 0.3 需求
+
+- 记录学习成果，方便自己查看，也方便与别人分享自己的学习过程。          
+- 自己公开社交媒体的汇总，包括但不限于b站，github，steam等，方便别人了解我。
+- 高度自定义的博客页面，方便实践自己学习到的前端知识。包括但不限于：
+  - 移动端适配
+  - 访问量统计
+  - 评论功能(匿名)  
+  - 对前端项目的模仿
+    - 手柄，键鼠前端，live2D前端与开发工具等
+  - *统一的插件接口管理（低可能）
+  - 类似TODO的需求结构体，实现跨文档的内容（例如本内容）
+  - ......待添加
+- 夹带一些私货，ACG相关。
+
+## 1 linux & windows双系统的安装
+如果你已经完成了linux环境的搭建，请直接跳转到[这里](#2-jekyll与其依赖安装)。
+如果你准备在windows环境下进行搭建，请自行搜索搭建，在搭建完成后跳转到[这里](#4-jekyll使用)。注意，在windows下部署可能会有与linux不同的指令，由于笔者对windows下的命令行并不熟悉，请读者在知道自己要干什么之后再进行尝试。
+
+笔者有一个闲置的笔记本，华硕飞行堡垒5代，由于长时间未使用，在备份好数据后准备安装双系统。
+
+由于笔者缺少linux系统的使用经验，故先安装Windows(后称win)系统。
+该笔记本默认使用的系统为Windows10(后称win10)，故笔者安装此版本。以下步骤参考 [手把手教你给笔记本重装系统（Windows篇）](https://www.bilibili.com/video/BV16h4y1B7md/?share_source=copy_web&vd_source=5369508827737182630a32e3bfd0d7ac) 以及 [Windows 和 Ubuntu 双系统的安装和卸载](https://www.bilibili.com/video/BV1554y1n7zv/?p=2&share_source=copy_web&vd_source=5369508827737182630a32e3bfd0d7ac)系列视频 。
+
+### 1.1 win10的重装
+在微软官网搜索并下载([链接](https://www.microsoft.com/zh-cn/software-download/windows10))，选择“立刻下载工具”，下载并运行启动盘制作工具，烧录至u盘中。该u盘能被系统正常识别。（linux的不能）
+
+![图一]({{site.path}}/public/image/2024_07_09_2_1.png "立刻下载工具")
+
+将u盘插入笔记本，搜索笔记本厂商进入bios方法，华硕为打开后猛按F2(?)即可进入bios。进入bios后设置从u盘启动系统，(此处可能需要更改安全选项)，安装后一路确定直到询问：“你想执行哪种类型的安装？”此处选择自定义，将所有分区删除，然后一路确定。
+
+(如果对后面操作没有信心，此步可以暂时跳过，因为需要较长时间，且与系统安装无关，仅仅时为了保证win系统的可用性)接下来可以安装相关驱动，笔者较为懒惰，此处选择安装驱动精灵自动安装驱动，读者可以去笔记本官网获取驱动下载。
+
+此时整个磁盘都是win系统下的c盘，为了给linux系统留出空间，右键任务栏windows图标打开磁盘管理，选择c盘，右键，压缩卷，此处我选择为linux预留200GB空间，由于磁盘和系统对于GB与MB直接换算并不相同，计算200GB时可以向上取100到200MB，即200 G ≈ 1024*200+200 M = 205000 M，故压缩205000MB，避免linux系统磁盘大小不是整数急死强迫症，后文中linux分区也是同理，磁盘空间计算问题不再重复。
+
+### 1.2 linux(ubbutu)的安装
+首先选择系统镜像，笔者由于不熟悉无GUI的系统，此处选择使用ubuntu的最新版本Ubuntu 24.04 LTS。需要注意的是新版本可能导致某些依赖或应用部署方式与旧版本不同，笔者在此处的建议是熟悉一个版本的大部分功能前非必要不更换。
+
+选择完后[下载对应版本](https://ubuntu.com/download/desktop)，保存iso文件。利用烧录软件将u盘烧录为启动盘，笔者使用软件为[rufus](https://rufus.ie/zh/)，选择镜像和u盘后等待烧录。注意此处u盘在烧录完之后无法被windows系统正常识别，是正常现象。
+
+![图二]({{site.path}}/public/image/2024_07_09_2_2.png "无法正常识别")
+
+在win系统中启动磁盘管理，右键磁盘，属性，卷，查看磁盘分区格式，笔者为GUID分区表(GPT)格式，若为主启动记录(MBR)后续步骤会有所区别，请参照[Windows 和 Ubuntu 双系统的安装和卸载](https://www.bilibili.com/video/BV1554y1n7zv/?p=7&share_source=copy_web&vd_source=5369508827737182630a32e3bfd0d7ac)进行后续安装。
+
+和安装win系统时一样，开机后进入bios，选择从u盘启动，笔者在安装ubuntu时出现报错，需要关闭RST以继续，此处参考[关闭 Intel RST 以及导致的蓝屏修复方法](https://blog.csdn.net/jzwalliser/article/details/128344846)，在win系统下win+R，输入msconfig，引导，打开安全引导，应用，确定，关闭电脑，开机，进bios，在设置中寻找Controller Mode，修改为AHCI mode，保存并退出，重新开始安装ubuntu。
+
+此时笔者在bios中使用启动盘引导ubuntu的安装，选择Try...(忘记了，应该是第一项)，进入安装，语言选择中文简体，键盘布局选择English(US)，24版好像有检测功能，记得检查是否正确；网络可以暂时不连接，安装完毕后配置镜像源后再更新理论上速度更快；选择正常安装，利用启动盘中安装包进行安装；安装类型选择其他选项，自行分配硬盘空间，避免win系统被覆盖。
+
+选择之前预留的空闲分区，点击左下角加号创建分区。此处笔者与参考视频中的操作不同，不能选择EFI系统分区，搜索后发现有可能是新版ubuntu自动创建了引导分区，此处第一个创建的是交换分区，就算虚拟内存存放位置，大小应参考笔记本内存大小，笔者笔记本内存大小为32G，故设置为40G，但后续查询发现笔者内存为8G，理论上不影响，只是有些浪费。将`用于：`选项修改为交换分区或SWAP（取决于ubuntu版本），设置大小点击确定/OK；后创建根目录(/)分区，`用于：`选项不变为`Ext4`，挂载点选择`/`，此处大小取决于你需要的大小，可以理解为win系统下C盘的大小，笔者将大小设置为80GB；创建`/home`分区，Ext4，挂载点选择`/home`，此目录可以理解为win系统下存放数据的非C盘的大小，笔者设置为90G；继续安装。
+
+选择时区：东8；您是谁？设置姓名，计算机名与密码；等待安装，重新启动，根据屏幕提示将u盘拔出，回车，笔者此时进入bios将Controller Mode修改为原始状态，并在win系统下关闭安全启动，关机。
+
+重新进入bios，从ubuntu启动，此时可以选择ubuntu和windows启动。
+
+此时基本已经安装完成，进入ubuntu进行下一步。
+
+## 2 Jekyll与其依赖安装
+此时ubuntu刚刚安装，请链接wifi并进行一些基础设置，如安装vscode，调整系统设置等。
+### 2.1 更新系统与依赖安装
+使用`sudo apt upgrade`更新依赖，使用`sudo apt update`更新软件包；
+以下为一些常用依赖：
+```
+sudo apt install git    #安装git
+```
+
+参考[Jekll on Ubuntu](https://jekyllrb.com/docs/installation/ubuntu/)，输入以下内容：
+```
+sudo apt-get install ruby-full build-essential zlib1g-dev #安装Ruby，zlib等依赖
+```
+接着：
+```
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+###  2.2 安装Jekyll
+接下来只剩通过Bundler安装Jekyll，但由于The Great Wall的原因推荐将源更换为镜像源，执行：
+```
+bundle config mirror.https://rubygems.org https://gems.ruby-china.com       #更换源
+gem install jekyll bundler                                                  #安装jekyll
+```
+
+等待安装完成。
+
+## 3 Jekyll使用准备
+在使用Jekyll之前，为了方便win系统与ubuntu之间传送文件，笔者尝试了几种连接方式并最终成功连接。
+
+### 3.1 未成功方法
+以下是一些笔者尝试且未能实现的方法，包括但不限于：
+```
+>QQ
+>腾讯不维护，登陆失败，还不知道如何卸载，大失败
+
+>利用windows远程连接功能
+>笔者不会，教程似乎过期了
+
+>文件同步工具Resilio Sync
+>国内无法访问官网，无法安装
+
+......
+```
+总之，在尝试了很多方法后还是回到了使用SSH连接传输文件，缺点是不能看到图形化界面，但对于传输文件来说已经够用了。[参考](https://blog.csdn.net/qq_29962483/article/details/84874841)
+
+
+### 3.2 网络测试
+
+笔者将两台电脑连接同一局域网后进行测试：
+1.在win下：
+利用`ipconfig`显示本机ip地址
+```
+#在返回的内容中找到如下一行：
+IPV4地址. . . . . . . . . . . .: ***.**.**.**   #此处即为windows的ip地址，记为winip
+```
+2.在ubunntu下
+利用`ifconfig`显示本机地址，可能需要安装相关网络工具，按照提示进行安装
+```
+#在返回的内容中找到有(以太网)标注的一块的第二行：
+inet ***.**.**.** #此处即为ubuntu的ip地址，记为linip
+```
+
+3.返回win：
+```
+ping 'linip'                        #ping获取到的linip尝试是否可以连接
+```
+笔者正常连接，若读者出现问题，可能是由于ubuntu防火墙需要进行相关设置，与下文中ubuntu`ping`win类似，请读者自行搜索解决
+
+4.返回ubuntu：
+
+```
+ping 'winip'                        #ping获取到的winip尝试是否可以连接
+```
+笔者出现错误，查询[相关材料](https://blog.csdn.net/Ceosat/article/details/105057554)后发现是windows防火墙相关设置出现问题，此处复制解决方法：
+```
+【1】右键单击屏幕右下角Internet访问 --》打开“网络和Internet”设置。
+【2】Windows防火墙设置 --》 高级设置。
+【3】双击入站规则 --》 找到文件和打印机共享(回显请求 - ICMPv4-In)
+【4】双击文件和打印机共享(回显请求 - ICMPv4-In) --》常规–》打钩已启用
+【5】应用 --》 确定 --》 关闭
+```
+打开后能正常运行
+
+### 3.3 安装并使用WinSCP
+访问[WinSCP官网](https://winscp.net/eng/download.php)进行下载，安装。
+需要在linux系统下安装SSH，相关指令如下（功能为笔者推测，并不代表实际功能）
+```
+sudo apt-get install openssh-server -y          #安装SSH，加-y自动确定
+sudo /etc/init.d/ssh start                      #启动SSH初始化
+service SSH start                               #启动SSH服务
+ssh localhost                                   #测试SSH状态
+```
+![图三]({{site.path}}/public/image/2024_07_09_2_3.png "ssh正常运行")
+打开WinSCP，参考文章中使用SFTP被拒绝，笔者没有且能正常使用，故选择SFTP。输入linip，即ubuntu的ip地址，用户名与密码即ubuntu的用户名与密码，即可正常使用WinSCP。
+
+### 3.4 设置同步文件
+点击同步左边的按钮，将win系统中的存放markdown文件的文件夹与linux系统存放md文件的文件夹连接，实现同步修改。但这个仅适合小文件的同步，因为只需要一个修改就会产生同步操作，笔者建议使用同步功能，但也需要在一定的修改之后同步一次，避免系统崩溃产生的修改丢失。
+
+## 4 Jekyll使用
+现在我们可以在两个电脑上同步文件，Jekyll也被正确安装，现在终于可以开始配置Jekyll了。以下是一些参考[Jekyll官网](https://jekyllcn.com/docs/usage/)的相关操作，注释为一些个人的理解：
+```
+jekyll new path     #在指定的文件目录下新建jekyll项目
+
+jekyll build        #将当前jekyll项目编译为网站文件，需要在项目路径下执行，以下同理
+
+jekyll serve        #在本地部署网站，利用localhost:4000进行访问调试
+
+......(等待补充)
+```
+
+
+### 4.1 文件结构
+
+来自[官网](http://jekyllcn.com/docs/structure/)的文件结构介绍如下，我自己加了一些注释来记录：
+```
+.
+├── _config.yml       //生成网站时的配置文件，控制网页的模板
+├── _drafts           //草稿
+|   ├── begin-with-the-crazy-ideas.textile
+|   └── on-simplicity-in-technology.markdown
+├── _includes         //功能类似全局变量，能在各个位置显示文件中的内容
+|   ├── footer.html
+|   └── header.html
+├── _layouts          //控制文章与页面的模板，需要在yaml头中设置或保持默认
+|   ├── default.html
+|   └── post.html
+├── _posts            //文章内容
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   └── 2009-04-26-barcamp-boston-4-roundup.textile
+├── _site             //网站最终页面，似乎只在本地部署时有效，随便删
+├── .jekyll-metadata  //jekyll中间过程文件，建议忽略
+└── index.html        //首页文件
+```
+目录中还缺少_data文件夹，内容时`.yml`,`.yaml`,`.json`,`.csv`,可以通过`site.data.文件名（无扩展名）`访问。
+而默认生成的目录如下：
+```
+├── _posts            //文章内容
+|   └── 2024-07-10-welcome-to-jekyll.markdown
+├── _config.yml       //生成网站时的配置文件，控制网页的模板
+├── .gitignore        //git上传控制文件，忽略了_site文件夹，一些缓存文件和.jekyll-metadata，以及vendor文件夹
+├── 404.html          //404返回内容
+├── about.markdown    //about页面内容
+├── Gemfile           //RubyGem配置文件
+└── index.markdown    //首页文件，在网站会自动转换位html文件
+```
+可以看到new的文件内容有所差异，我们再来看看[一位大佬](https://github.com/wu-kan/wu-kan.github.io#)的文件目录：
+```
+├── _posts            //文章内容
+├── _config.yml       //生成网站时的配置文件，控制网页的模板，此文件相较于默认文件复杂得多，作者将大部分HTML文件写在该文件中
+├── LICENSE           //证书文件
+├── .gitignore        //git上传控制文件
+└── README.md         //将README作为首页文件？
+```
+可以看到他将内容魔改得较为完全，图片使用图床加载，css也使用相关网站进行加载，缺点可能是有时候网络不好需要较长的加载时间，但优点是不需要复杂的文件结构来生成内容。
+
+### 4.2 我的Jekyll修改过程
+如果你不准备像我一样自己对网页进行编辑，添加功能，到此处就可以结束阅读了，建议到网上找一个看得顺眼的模板，到GitHub上fork一下就行，写文章只要在_post下面新建markdown文件就可以了，你可以关闭文章退出了，而如果你有一点编程的基础以及强悍的意志力，你可以通过搜索引擎以及AI工具完善你自己的设计
+
+我的测试方法是使用WinSCP在ubuntu与Windows间同步文件，在windows下修改代码后同步到ubuntu中，在ubuntu中使用`jekyll s`进行本地部署测试，以下是一些我参考的教程(有些还没实现)：
+
+```
+目录实现https://github.com/ghiculescu/jekyll-table-of-contents/tree/master
+主要参考https://lanyon.getpoole.com/
+https://www.54year.com/blog.html
+https://github.com/wu-kan/wu-kan.github.io
+jQ下载https://blog.csdn.net/xsq123/article/details/125291010
+评论https://utteranc.es/ (等待实现)
+可能的优化Rocket Loader
+字数统计https://sacha.me/articles/jekyll-word-counts
+中文字体显示错误https://www.54year.com/blog/jekyll%E5%87%BD%E6%95%B0(number_of_words)%E4%B8%AD%E6%96%87%E5%AD%97%E6%95%B0%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%98.html
+```
+
+前期的一些准备就写到这里，之后可能另开一个文章或直接在这里进行补充。
+
+就酱~

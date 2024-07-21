@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<div class="post">
+  <h1 class="post-title">{{ page.title }}</h1><br>
+  <span class="post-date">
+    <span>写于：{{ page.date | date: "%F"}}
+      {% capture last_change_date %}{{ page.last_change_date }}{% endcapture %}
+      {% if last_change_date contains "-" %}
+      &emsp;
+      改于：{{ page.last_change_date | date: "%F"}}
+      {% endif %}
+      </span>
+    <br>
+    {% capture words %}
+      {{ page.content | number_of_words:'auto' | minus: 250 }}
+    {% endcapture %}
+    {% unless words contains "-" %}
+    <span>字数：{{ words | plus: 250 }}&emsp;
+      阅读需要{{ words | plus: 250 | divided_by:180 }} mins</span>
+    {% endunless %}
+  <div id = "content">{{ content }}</div>
+</div>
+
+{% if site.related_posts.size >= 1 %}
+<div class="related">
+  <h2>Related posts</h2>
+  <ul class="related-posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <h3>
+          <a href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date: "%F" }}</small>
+          </a>
+        </h3>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}

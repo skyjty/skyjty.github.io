@@ -1,0 +1,22 @@
+title: Skyqyzm
+email: skyqyzm1031@gmail.com
+description: # this means to ignore newlines until "baseurl:"
+  鱼越此时海，<br>花开彼岸天。
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+#twitter_username: null
+github_username:      skyjty
+timezone:             China/Shanghai
+paginate:             20
+
+author:
+  name:               Skyqyzm
+  url:                https://github.com/skyjty
+  email:              skyqyzm1031@gmail.com
+
+# theme: minima
+plugins:
+  - jekyll-paginate
+
+version: 0.0.1
+# google_analytics_id: #UA-XXXX-Y

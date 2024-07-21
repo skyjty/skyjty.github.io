@@ -1,0 +1,28 @@
+---
+layout: page
+title: Blogs
+permalink: /blogs/
+---
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+    </head>
+    <body>
+        <br>
+        {% for post in site.posts %}
+
+            <article class='post'>
+                <h2 class='post-title'>
+                    <a href="{{ site.path }}{{ post.url }}">
+                        {{ post.title }}
+                    </a>
+                </h2>
+                <div class="post-date">{{ post.date | date: "%F" }}</div>
+                {{ post.brief_introduction }}
+            </article>
+
+        {% endfor %}
+    </body>
+</html>
