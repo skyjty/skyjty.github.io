@@ -4,6 +4,7 @@ title: Tags
 permalink: /tags/
 ---
 <br>
+
 <ul class="tags">
     {% for tag in site.tags %}
         <div class = "post-date"><a href="#{{ tag[0] }}">{{ tag[0] }}</a> 共{{ tag[1].size }}篇</sup></div>
@@ -12,12 +13,12 @@ permalink: /tags/
 
 <ul class="listing">
     {% for tag in site.tags %}
-    <h2>{{ tag[0] }} <sup>{{ tag[1].size }}</sup></h2>
-    {% for post in tag[1] %}
-    <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    </li>
+        <h2>{{ tag[0] }} <sup>{{ tag[1].size }}</sup></h2>
+        {% for post in tag[1] %}
+        <li class="listing-item">
+            <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+            <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
     {% endfor %}
-{% endfor %}
 </ul>

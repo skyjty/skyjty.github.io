@@ -1,0 +1,254 @@
+body {
+    background: transparent;
+    font-family: sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#gamepad {
+    height:600px;
+    width:721.14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image:url(../assests/svg/xbox_star/gamepad.svg);
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#gamepad .triggers {
+    width: 434.62px;
+    height: 103.07px;
+    position: absolute;
+    left: 143.1px;
+}
+
+#gamepad .trigger {
+    width: 84.2px;
+    height: 103.07px;
+    background: url(../assests/svg/xbox_star/trigger_.svg);
+    background-repeat: no-repeat;
+    clip-path: inset(100% 0px 0px 0pc);
+}
+
+#gamepad .trigger[data-value="0"] {
+    opacity: 0;
+}
+
+#gamepad .trigger.left {
+    float: left;
+    background-position: 0 0;
+}
+
+#gamepad .trigger.right {
+    float: right;
+    transform: rotateY(180deg);
+}
+
+#gamepad .bumper {
+    width: 175.74px;
+    height: 128.92px;
+    background: url(../assests/svg/xbox_star/bumper_.svg);
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+#gamepad .bumpers {
+    position: absolute;
+    width: 566.86px;
+    height: 128.92px;
+    left: 77.32px;
+    top: 93.5px;
+}
+
+#gamepad .bumper[data-pressed="true"] {
+    opacity: 1;
+}
+
+#gamepad .bumper.left {
+    float: left;
+}
+
+#gamepad .bumper.right {
+    float: right;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+#gamepad .arrows {
+    position: absolute;
+    width: 139.03px;
+    height: 32.93px;
+    top: 222.37px;
+    left: 291.2px;
+}
+
+#gamepad .select{
+    background: url(../assests/svg/xbox_star/map_.svg);
+    background-repeat: no-repeat;
+    width: 32.92px;
+    height: 32.92px;
+    opacity: 0;
+}
+
+#gamepad .start {
+    background: url(../assests/svg/xbox_star/settings_.svg);
+    background-repeat: no-repeat;
+    width: 32.92px;
+    height: 32.92px;
+    opacity: 0;
+}
+
+#gamepad .select[data-pressed="true"],
+#gamepad .start[data-pressed="true"] {
+    opacity: 1;
+}
+
+#gamepad .select {
+    float: left;
+}
+
+#gamepad .start {
+    /* background-position: 33px 0px; */
+    float: right;
+}
+
+#gamepad .buttons {
+    position: absolute;
+    width: 147px;
+    height: 147px;
+    top: 166.9px;
+    left: 470.71px;
+}
+
+#gamepad .button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    /* background: url(../assests/svg/xbox/buttons.svg); */
+    opacity: 0;
+    
+}
+
+#gamepad .button[data-pressed="true"] {
+    /* background-position-y: -53px; */
+    opacity: 1;
+    background-repeat: no-repeat;
+}
+
+#gamepad .a {
+    background: url(../assests/svg/xbox_star/A_.svg);
+    bottom: 0px;
+    left: 48.5px;
+}
+
+#gamepad .b {
+    background: url(../assests/svg/xbox_star/B_.svg);
+    top: 48.8px;
+    right: 0px;
+}
+
+#gamepad .x {
+    background: url(../assests/svg/xbox_star/X_.svg);
+    top: 48.5px;
+    right: 98px;
+}
+
+#gamepad .y {
+    background: url(../assests/svg/xbox_star/Y_.svg);
+    top: 0px;
+    left: 48.5px;
+}
+
+#gamepad .sticks {
+    position: absolute;
+    width: 346.4px;
+    height: 188px;
+    top: 204px;
+    left: 141.5px;
+}
+
+#gamepad .stick {
+    position: absolute;
+    background: url(../assests/svg/xbox_star/stick.svg);
+    height: 72px;
+    width: 72px;
+    background-repeat: no-repeat;
+}
+
+#gamepad .stick[data-pressed="true"] {
+    background: url(../assests/svg/xbox_star/stick_.svg);
+    background-repeat: no-repeat;
+}
+
+#gamepad .stick.left {
+    top: 0px;
+    left: 0px;
+}
+
+#gamepad .stick.right {
+    bottom: 0px;
+    right:0px;
+}
+
+#gamepad .dpad {
+    position: absolute;
+    width: 112.2px;
+    height: 112.2px;
+    top: 299.8px;
+    left: 213px;
+}
+
+#gamepad .face {
+    width: 39px;
+    height: 39px;
+    background: url(../assests/svg/xbox_star/pad_.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    opacity: 0;
+}
+
+#gamepad .face[data-pressed="true"] {
+    opacity: 1;
+}
+
+#gamepad .face.up {
+    transform: rotate(0.25turn);
+    left: 36.1px;
+    top: 1px;
+}
+
+#gamepad .face.down {
+    transform: rotate(0.75turn);
+    /* transform-origin:56.1px 56.1px; */
+    bottom: 1px;
+    left: 36.1px;
+}
+
+#gamepad .face.left {
+    top: 37px;
+    left: 1px;
+}
+
+#gamepad .face.right {
+    transform: rotate(0.5turn);
+    top: 37px;
+    right: 1px;
+}
+
+#gamepad .meta{
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    left: 331.57px;
+    top: 135px;
+    background: url(../assests/svg/xbox_star/meta.svg);
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+#gamepad .meta[data-pressed="true"] {
+    opacity: 1;
+}

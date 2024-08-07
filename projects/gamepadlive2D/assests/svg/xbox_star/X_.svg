@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_2" data-name="图层_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.13 50.32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f7f6fb;
+        font-family: MicrosoftYaHei-Bold, 'Microsoft YaHei';
+        font-size: 38.16px;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: #979797;
+        stroke: #979797;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.1px;
+      }
+    </style>
+  </defs>
+  <g id="_图层_3" data-name="图层_3">
+    <g>
+      <path class="cls-2" d="M49.58,25.08c0,13.54-10.97,24.51-24.51,24.51S.55,38.61.55,25.08v-.02C.56,11.52,11.54.55,25.07.55c13.54,0,24.51,10.99,24.51,24.53Z"/>
+      <text class="cls-1" transform="translate(11.07 40.33)"><tspan x="0" y="0">X</tspan></text>
+    </g>
+  </g>
+</svg>

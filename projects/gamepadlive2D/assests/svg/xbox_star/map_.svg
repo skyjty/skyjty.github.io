@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_2" data-name="图层_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.92 32.93">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #979797;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #979797;
+        stroke-width: 1.1px;
+      }
+
+      .cls-2 {
+        stroke: #f7f6fb;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="_图层_3" data-name="图层_3">
+    <g>
+      <path class="cls-1" d="M32.37,16.47h0c0,5.12-2.41,9.67-6.16,12.57-2.69,2.09-6.08,3.34-9.75,3.34-8.79,0-15.91-7.13-15.91-15.91h0C.55,7.67,7.68.55,16.46.55c.05,0,.1,0,.16,0,8.72.09,15.75,7.17,15.75,15.91Z"/>
+      <g>
+        <path class="cls-2" d="M14.44,15.69h10.12v7.67h-10.12v-7.67Z"/>
+        <path class="cls-2" d="M11.14,17.54h-2.52v-7.67h10.12v1.79"/>
+      </g>
+    </g>
+  </g>
+</svg>

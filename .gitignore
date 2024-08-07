@@ -4,6 +4,9 @@ _site
 .ruby-version
 .jekyll-cache
 
+# template
+
+
 # Numerous always-ignore extensions
 *.diff
 *.err
