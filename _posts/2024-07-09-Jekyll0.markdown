@@ -5,8 +5,8 @@ date:   2024-07-09 20:00:00 +0800
 last_change_date: 2024-07-23 12:00:00 +0800
 categories: web
 brief_introduction: 从安装linux系统开始到部署实现自己的博客
-tags: Jekyll web
-related_posts: Welcome to Jekyll!
+tags: Jekyll
+# related_posts: Welcome to Jekyll!
 ---
 
 - [0 概述](#0-概述)

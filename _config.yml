@@ -5,14 +5,14 @@ description: # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: null
-github_username:      skyjty
-timezone:             China/Shanghai
-paginate:             20
+github_username:  skyjty
+timezone:  China/Shanghai
+paginate:  20
 
 author:
-  name:               Skyqyzm
-  url:                https://github.com/skyjty
-  email:              skyqyzm1031@gmail.com
+  name:  Skyqyzm
+  url:  https://github.com/skyjty
+  email:  skyqyzm1031@gmail.com
 
 # theme: minima
 plugins:
@@ -21,4 +21,9 @@ plugins:
 version: 0.0.1
 # google_analytics_id: #UA-XXXX-Y
 
-keep_files:           ["projects"]
+keep_files:  ["projects"]
+projects:
+  - name:  GamepadViewer
+    url:  "/projects/gamepadlive2D/gamepad.html"
+    doc:  "手柄控制显示"
+    

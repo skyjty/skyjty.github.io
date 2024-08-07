@@ -5,7 +5,7 @@ date:   2023-12-23 20:00:00 +0800
 last_change_date: 2024-07-29 17:00:00 +0800
 categories: C++
 brief_introduction: 用C++简易实现一个购物系统
-tags: C++ 课设
+tags: 课设
 # related_posts: Welcome to Jekyll!
 ---
 
@@ -28,7 +28,7 @@ tags: C++ 课设
 - [6 补充](#6-补充)
 
 ## 1 实验环境
-```c++
+```
 软件环境：
 操作系统：Windows 11 家庭中文版
 集成开发环境：Embarcadero Dev-C++ 6.3  //该编译器仅适用于简单程序的编写，同时也是

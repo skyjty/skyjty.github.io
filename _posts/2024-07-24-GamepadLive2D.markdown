@@ -2,11 +2,11 @@
 layout: post
 title:  手柄控制显示
 date:   2024-07-24 09:00:00 +0800
-last_change_date: 2024-07-24 09:00:00 +0800
+last_change_date: 2024-08-07 14:20:00 +0800
 categories: web
 brief_introduction: 基于jQuery的手柄控制显示
-tags: Controller obs web
-project: GmaepadLive2D
+tags: web
+project: GamepadLive2D
 # related_posts: Welcome to Jekyll!
 ---
 
@@ -27,6 +27,8 @@ project: GmaepadLive2D
 - [3 本地部署](#3-本地部署)
   - [3.1 拉取项目](#31-拉取项目)
   - [3.2 配置obs](#32-配置obs)
+- [4 部署到Jekyll中](#4-部署到jekyll中)
+  - [4.1 兼容性问题](#41-兼容性问题)
 
 ## 0 概述
 
@@ -630,6 +632,7 @@ Chrome:94ms,20frame
 访问项目的[github网页](https://github.com/skyjty/MyGamepadViewer)（可能需要魔法），点击Code-Download ZIP：
 ![图十四]({{site.path}}/public/image/2024_07_24_1_14.png "下载文件")
 
+或者点击[这里](https://github.com/skyjty/MyGamepadViewer/archive/refs/heads/main.zip)下载，两者都是github的源。
 将文件解压到某个文件夹中，项目就下载到本地了。
 ![图十五]({{site.path}}/public/image/2024_07_24_1_15.png "下载文件")
 
@@ -651,9 +654,25 @@ Chrome:94ms,20frame
 
 到这里，本地部署已经完成了，在笔者的计算机上该项目可以完美地地运行在obs中，在概述中的基本目的达到了，接下来是一些扩展。
 
-to be edit
+## 4 部署到Jekyll中
 
-<!-- url传递参数 -->
+众所周知，Jekyll是一个“静态”网站生成项目，但这不是说网站本身与静态的pdf相似。这个静态指的是网站文件是静态的，不能通过用户在前端的输入改变后台的文件，数据等，但是可以通过前端三件套实现一些动画效果。
+但Jekyll本身基本上只是为文章编写做了相关优化，而对单独的前端项目缺少支持，笔者之后本地运行的过程中出现过访问本项目时出现。部署在Jekyll后可以直接利用链接导入obs中，但可能由于网络问题无法加载。
+总之这只是一次测试Jekyll部署前端项目的能力，为之后对其他项目部署的铺垫。
+
+相关内容会在之后关于Jekyll的下一篇文章中进行总结与补充，但本项目的本地使用与网络使用区别并不大，故此处省略。
+
+以下记录一些发现的问题。
+
+### 4.1 兼容性问题
+
+这是笔者不主要考虑的问题，因为笔者仅仅在windows平台下有使用obs录制的需求，但由于笔者测试Jekyll的平台构建在Linux下，在此记录一些问题：
+- 在本地测试时，链接发生重置，指向了原本的主页，刷新后加载主页，需要重新进入
+- 在linux下的edge浏览器发生字体错误的情况，以后更新的svg应该会将字体作为图片导出避免字体导致的问题。
+![图十九]({{site.path}}/public/image/2024_07_24_1_19.png "字体错误")
+- 相比于windows，本项目在linux中的位置有些错位，可能是小数点像素导致了，以后最好使用整数进行编辑。
+
+<!-- url传递参数 completed!-->
 <!-- svg编辑研究 completed!-->
 <!-- Live2D初步探究 -->
-<!-- 键盘编辑（简单得多）（需要吗？） -->
+<!-- 键盘编辑（简单得多）（需要吗？） completed!-->

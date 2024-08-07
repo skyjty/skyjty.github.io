@@ -3,7 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2024-07-09 19:55:08 +0800
 categories: jekyll
-tags: Jekyll test
+tags: Jekyll
 ---
 
 >这是由Jekyll官方创建的文档
