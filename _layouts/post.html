@@ -23,7 +23,7 @@ layout: default
   <div id = "content">{{ content }}</div>
 </div>
 
-{% if post.project %}{
+{% if post.project %}
   <br>
   <ul class="related-posts">
   {% for project in site.projects%}
@@ -38,7 +38,7 @@ layout: default
     {% endif %}
   {% endfor %}
 </ul>
-}
+{% endif %}
 
 {% if site.related_posts.size >= 1 %}
 <div class="related">
