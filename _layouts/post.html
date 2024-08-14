@@ -20,25 +20,26 @@ layout: default
     <span>字数：{{ words | plus: 250 }}&emsp;
       阅读需要{{ words | plus: 250 | divided_by:180 }} mins</span>
     {% endunless %}
+    {% if page.project %}
+    <br>
+    <ul class="related-posts">
+      {% for project in site.projects%}
+        {% if project.name contains post.project %}
+        <li>
+          <h3>
+            <a href="{{ project.url | relative_url }}" target = "_blank">
+            项目页面：{{ project.name }}<br>
+            </a>
+          </h3>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    {% endif %}
   <div id = "content">{{ content }}</div>
 </div>
 
-{% if page.project %}
-  <br>
-  <ul class="related-posts">
-  {% for project in site.projects%}
-    {% if project.name contains post.project %}
-    <li>
-      <h3>
-        <a href="{{ project.url | relative_url }}" target = "_blank">
-          项目页面：{{ project.name }}<br>
-        </a>
-      </h3>
-    </li>
-    {% endif %}
-  {% endfor %}
-</ul>
-{% endif %}
+
 
 {% if site.related_posts.size >= 1 %}
 <div class="related">
