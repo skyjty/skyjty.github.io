@@ -293,10 +293,11 @@ jQ下载https://blog.csdn.net/xsq123/article/details/125291010
 ```
 
 前期的一些准备就写到这里，之后可能另开一个文章或直接在这里进行补充。
+>2024_8_14更新：补充内容在[这篇文章]({{site.path}}/web/2024/08/14/Jekyll1.html)中
 
 ### 4.3 部署问题
 由于添加了非官方的gem插件，需要更改为GitHub Actions。具体参考[这里(官网)](https://jekyllrb.com/docs/continuous-integration/github-actions/)和[这里(社区)](https://zzy979.github.io/posts/creating-personal-blog-site/)
 
-笔者此处出现报错，查看后发现是jekyll默认部署3.1版本的ruby，同时也不接受3.2.3版本ruby，笔者将jekyll.yml中的ruby-version更改为3.2.2即可完成安装，注意笔者并没有安装该版本的ruby，猜测github page使用了容器进行网站编译，并不需要在本地运行。
+笔者此处出现报错，查看后发现是jekyll默认部署3.1版本的ruby，同时也不接受3.2.3版本ruby，笔者将jekyll.yml中的ruby-version更改为3.2.2即可完成安装，注意笔者并没有安装该版本的ruby，猜测github page使用了虚拟化的容器进行网站编译，并不需要在本地运行。
 
 就酱~

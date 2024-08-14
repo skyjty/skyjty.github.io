@@ -1,0 +1,68 @@
+---
+layout: post
+title:  Jekyll部署文档(1 Jekyll美化)
+date:   2024-08-14 12:51:59 +0800
+last_change_date: 2024-08-14 12:51:59 +0800
+categories: web
+brief_introduction: 本博客美化过程
+tags: Jekyll
+---
+
+- [0 概述](#0-概述)
+- [1 基本界面美化](#1-基本界面美化)
+- [2 检索页面编辑](#2-检索页面编辑)
+  - [2.1 blogs.html，tags.html与timeline.html](#21-blogshtmltagshtml与timelinehtml)
+  - [2.2 404.html](#22-404html)
+  - [2.3 index.html](#23-indexhtml)
+  - [2.4 sidebar.html](#24-sidebarhtml)
+- [3 文章页面](#3-文章页面)
+
+## 0 概述
+本文档旨在记录笔者在初步部署Jekyll后对博客进行的美化操作，以供参考。此页面会进行动态更新，以作为建站记录。
+
+如果你对如何在本地进行测试感兴趣，可以参考笔者的上一篇文档：[从安装linux系统开始到部署实现自己的博客]({{site.path}}/web/2024/07/09/Jekyll0.html)
+
+## 1 基本界面美化
+>主要参考：
+https://lanyon.getpoole.com/                                //博客的基础，以下简称lanyon主题
+https://github.com/wu-kan/wu-kan.github.io                  //参考的博客
+
+在lanyon主题中渲染规则是在`_include`文件夹中的`head.html`中引入的，笔者为了将资产统一管理将页面相关的资产放入public文件夹中，分为css，js，image（文章内图片），icon（网站图标）与fonts（字体文件）。对于页面的渲染规则主要保存在`/public/css`下，其中`poole.css`是lanyon参考的主题，`lanyon.css`是lanyon添加的渲染规则，`syntax.css`是对高亮显示的渲染。以上文件包含的主要内容写在文件的注释中。
+
+但如果要对自己的网站进行一些自定义渲染直接修改比较麻烦，此时可以在head.html中引入css文件之后利用`<style>`标签进行修改，后引入的内容会覆盖前面的内容。
+例如在默认的lanyon主题中打开侧边栏会使文章回到最开始的地方，这并不符合我习惯的文章阅读方式。于是在引入lanyon之后对`sidebar`属性进行修改实现不回到文章顶部。
+更多详细的内容需要读者自己对css文件进行详细阅读，此处不再赘述。
+
+## 2 检索页面编辑
+对于一个博客，我认为有以下几个检索页面即非文章页面是较常被访问的：
+- index.html    //主页，笔者的主页仍在修改中
+- blogs.html    //所有博客的集合
+- tags.html     //根据标签进行分类的博客
+- timeline.html //根据时间进行分类的博客
+- 404.html      //无法访问时返回的界面
+- sidebar.html  //极简主题的侧边栏
+而将这些内容连接起来的是链接，但是由于Jekyll部署前后目录结构不同，Jekyll提供了Liquid标签实现了对象、标签和过滤器。
+
+简单来说，Liquid允许用户在界面中将`site`作为一个类似结构体的形式进行引用，提供了一个跨网页的接口。详细内容可见[官方网页](https://shopify.github.io/liquid/basics/introduction/)。
+利用这个接口，我对以上界面进行了编辑，但由于官方提供的接口只有对`site`，`post`与`page`的相关属性，如果需要创建新的对象与属性需要在`_config.yml`文件中进行修改，这样在Jekyll生成网页时才能读取。笔者后续引入`projects.html`就是使用这个方式。由于笔者暂时并没有那么多的前端项目需求，`_config.yml`文件中的项目列表是笔者手动进行维护。
+
+以下是各个页面的具体说明以及后续修改计划，之后按时间更新。
+
+### 2.1 blogs.html，tags.html与timeline.html
+blogs.html是所有博客的界面，是将所有博客进行简单排列的页面，而tags.html与timeline.html则是按时间与标签进行排列的界面，笔者计划后续对3个页面进行整合，并进行搜索功能的添加。
+
+### 2.2 404.html
+简单的静态页面。
+
+### 2.3 index.html
+to be edit
+
+### 2.4 sidebar.html
+这是目前笔者编辑较多的一个模块
+在sidebar中笔者添加了目录功能，参考了https://github.com/ghiculescu/jekyll-table-of-contents/tree/master。笔者计划在后续内容中将目录完全移植到侧边栏上。
+
+## 3 文章页面
+对于文章页面笔者并未进行过多的修改，只是在标题下利用Liquid进行了文章相关信息的添加，以及文章末尾的最近文章引导读者到别的网页进行浏览的操作。
+值得注意的是文章字数统计，由Jekyll官方提供的接口默认对中文的字数统计存在错误，需要传入参数后才能正确统计，详情参考[这里](https://www.54year.com/blog/jekyll%E5%87%BD%E6%95%B0(number_of_words)%E4%B8%AD%E6%96%87%E5%AD%97%E6%95%B0%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%98.html)。
+
+暂时想到的就这么多，请期待后续更新~
