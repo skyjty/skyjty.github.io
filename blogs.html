@@ -13,9 +13,9 @@ permalink: /blogs/
         <br>
         {% for post in site.posts %}
 
-            <article class='post' href="{{ site.path }}{{ post.url }}">
+            <article class='post' >
                 <h2 class='post-title'>
-                    <a>
+                    <a href="{{ site.path }}{{ post.url }}">
                         {{ post.title }}
                     </a>
                 </h2>
