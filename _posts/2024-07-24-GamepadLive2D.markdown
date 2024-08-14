@@ -115,13 +115,13 @@ this.$instructions = $("#instructions"); //创建一个指向#instructions标签
 
 this.$colorOverlay = this.$overlay.find("#color"); //find()函数搜索overlay对象的#color，并将colorOverlay变量指向#color；
 
-中括号创建数组对象；
+中括号创建数组对象;
 
 this.assertGamepadAPI(); //声明函数对象
 
 this.gamepads = {}; //大括号声明了一组键值对
 
-id: /045e|xinput|XInput/， //id被声明为了一个正则表达式，用以匹配设备id（045e代表xbox-one？）；
+id: /045e|xinput|XInput/, //id被声明为了一个正则表达式，用以匹配设备id（045e代表xbox-one？），该部分用于给手柄发送震动指令；
 
 this.onGamepadDisconnect.bind(this); //前一个this表示Gaempad类，bind(this)则是让该函数被执行时保证this表示的时Gamepad类而不是window类；
 
@@ -196,7 +196,7 @@ initOverlaySelectors();
 window.addEventListener(
   "gamepadconnected",
   this.onGamepadConnect.bind(this)
-);‘
+);
 //或者监测手柄断开连接，同上
 window.addEventListener(
   "gamepaddisconnected",
