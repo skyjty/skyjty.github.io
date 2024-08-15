@@ -5,28 +5,30 @@ permalink: /timeline/
 ---
 <br>
 <ul class="listing">
-  {% for post in site.posts %}
+	{% for post in site.posts %}
 
-    {% unless post.next %}
-      <h2>{{ post.date | date: '%B %Y' }}</h2><hr>
-    {% else %}
-      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-      {% capture mon %}{{ post.date | date: '%M' }}{% endcapture %}
-      {% capture nmon %}{{ post.next.date | date: '%M' }}{% endcapture %}
-      {% if year != nyear and mon != nmon %}
-        <h2>{{ post.date | date: '%B %Y' }}</h2><hr>
-      {% endif %}
-    {% endunless %}
+	{% unless post.next %}
+	<h2>{{ post.date | date: '%B %Y' }}</h2>
+	<hr>
+	{% else %}
+	{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+	{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+	{% capture mon %}{{ post.date | date: '%M' }}{% endcapture %}
+	{% capture nmon %}{{ post.next.date | date: '%M' }}{% endcapture %}
+	{% if year != nyear and mon != nmon %}
+	<h2>{{ post.date | date: '%B %Y' }}</h2>
+	<hr>
+	{% endif %}
+	{% endunless %}
 
-    <article class='post' >
-      <h3 class='post-title'>
-        <a href="{{ site.path }}{{ post.url }}">
-          {{ post.title }}
-        </a>
-    </h3>
-    <div class="post-date">{{ post.date | date: "%F" }}</div>
-    {{ post.brief_introduction }}
-  </article>
-  {% endfor %}
+	<article class='post'>
+		<h3 class='post-title'>
+			<a href="{{ site.path }}{{ post.url }}">
+				{{ post.title }}
+			</a>
+		</h3>
+		<div class="post-date">{{ post.date | date: "%F" }}</div>
+		{{ post.brief_introduction }}
+	</article>
+	{% endfor %}
 </ul>
