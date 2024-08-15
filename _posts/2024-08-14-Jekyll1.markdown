@@ -24,8 +24,8 @@ tags: Jekyll
 
 ## 1 基本界面美化
 >主要参考：
-https://lanyon.getpoole.com/                                //博客的基础，以下简称lanyon主题
-https://github.com/wu-kan/wu-kan.github.io                  //参考的博客
+>https://lanyon.getpoole.com/                  //博客的基础，以下简称lanyon主题
+>https://github.com/wu-kan/wu-kan.github.io    //参考的博客
 
 在lanyon主题中渲染规则是在`_include`文件夹中的`head.html`中引入的，笔者为了将资产统一管理将页面相关的资产放入public文件夹中，分为css，js，image（文章内图片），icon（网站图标）与fonts（字体文件）。对于页面的渲染规则主要保存在`/public/css`下，其中`poole.css`是lanyon参考的主题，`lanyon.css`是lanyon添加的渲染规则，`syntax.css`是对高亮显示的渲染。以上文件包含的主要内容写在文件的注释中。
 
@@ -41,6 +41,7 @@ https://github.com/wu-kan/wu-kan.github.io                  //参考的博客
 - timeline.html //根据时间进行分类的博客
 - 404.html      //无法访问时返回的界面
 - sidebar.html  //极简主题的侧边栏
+
 而将这些内容连接起来的是链接，但是由于Jekyll部署前后目录结构不同，Jekyll提供了Liquid标签实现了对象、标签和过滤器。
 
 简单来说，Liquid允许用户在界面中将`site`作为一个类似结构体的形式进行引用，提供了一个跨网页的接口。详细内容可见[官方网页](https://shopify.github.io/liquid/basics/introduction/)。
