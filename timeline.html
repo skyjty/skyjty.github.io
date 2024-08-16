@@ -15,10 +15,10 @@ permalink: /timeline/
 	{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
 	{% capture mon %}{{ post.date | date: '%M' }}{% endcapture %}
 	{% capture nmon %}{{ post.next.date | date: '%M' }}{% endcapture %}
-	{% if year != nyear and mon != nmon %}
-	<h2>{{ post.date | date: '%B %Y' }}</h2>
-	<hr>
-	{% endif %}
+		{% if year != nyear and mon != nmon %}
+			<h2>{{ post.date | date: '%B %Y' }}</h2>
+			<hr>
+		{% endif %}
 	{% endunless %}
 
 	<article class='post'>
