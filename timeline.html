@@ -19,7 +19,7 @@ permalink: /timeline/
 			<div class="post-date">{{ post.date | date: "%F" }}</div>
 			{{ post.brief_introduction }}
 		</article>
-		{% if post.next!=null %}
+		{% unless post.next %}
 			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
 			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
 			{% capture mon %}{{ post.date | date: '%M' }}{% endcapture %}
@@ -28,6 +28,6 @@ permalink: /timeline/
 				<h2>{{ post.next.date | date: '%B %Y' }}</h2>
 				<hr>
 			{% endif %}
-		{% endif %}
+		{% endunless %}
 	{% endfor %}
 </ul>
