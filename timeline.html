@@ -9,7 +9,7 @@ permalink: /timeline/
 		{% if forloop.first %}
 			<h2>{{ post.date | date: '%B %Y' }}</h2>
 			<hr>
-		{% endif }
+		{% endif %}
 		<article class='post'>
 			<h3 class='post-title'>
 				<a href="{{ site.path }}{{ post.url }}">
@@ -19,11 +19,11 @@ permalink: /timeline/
 			<div class="post-date">{{ post.date | date: "%F" }}</div>
 			{{ post.brief_introduction }}
 		</article>
-		{% unless post.next %}
+		{% unless forloop.last %}
 			{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
 			{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-			{% capture mon %}{{ post.date | date: '%M' }}{% endcapture %}
-			{% capture nmon %}{{ post.next.date | date: '%M' }}{% endcapture %}
+			{% capture mon %}{{ post.date | date: '%m' }}{% endcapture %}
+			{% capture nmon %}{{ post.next.date | date: '%m' }}{% endcapture %}
 			{% if year != nyear or mon != nmon %}
 				<h2>{{ post.next.date | date: '%B %Y' }}</h2>
 				<hr>
