@@ -53,7 +53,7 @@ permalink: /timeline/
       		{% capture mon %}{{ post.date | date: '%M' }}{% endcapture %}
       		{% capture nmon %}{{ post.next.date | date: '%M' }}{% endcapture %}
       		{% if year != nyear or mon != nmon %}
-        		<h2>{{ post.date | date: '%B %Y' }}</h2><hr>
+        		<h2>{{ post.next.date | date: '%B %Y' }}</h2><hr>
       		{% endif %}
     	{% endif %}
   	{% endfor %}
