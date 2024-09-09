@@ -40,14 +40,15 @@
     }
   </style>
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"> -->
+  <!-- 渲染Latex -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" />
   <script src="//cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" defer="defer"></script>
   <script src="//cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" defer="defer"
     onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})'></script>
-  <script src="//cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/mathtex-script-type.min.js" defer="defer"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/mathtex-script-type.min.js" defer="defer"></script> -->
+
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/icon/skyqyzm.png' | absolute_url }}">
   <link rel="shortcut icon" href="{{ '/public/icon/skyqyzm.ico' | absolute_url }}">
-
   <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ '/atom.xml' | absolute_url }}">
 
   <!-- {% if site.google_analytics_id %}
