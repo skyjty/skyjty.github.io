@@ -4,62 +4,6 @@ title: Timeline
 permalink: /timeline/
 ---
 <br>
-<ul class="listing">
-	<!-- {% for post in site.posts %}
-
-	{% unless post.next %}
-	<h2>{{ post.date | date: '%B %Y' }}</h2>
-	<hr>
-	{% else %}
-	{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-	{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-	{% capture mon %}{{ post.date | date: '%M' }}{% endcapture %}
-	{% capture nmon %}{{ post.next.date | date: '%M' }}{% endcapture %}
-		{% if year != nyear or mon != nmon %}
-			<h2>{{ post.date | date: '%B %Y' }}</h2>
-			<hr>
-		{% endif %}
-	{% endunless %}
-
-	<article class='post'>
-		<h3 class='post-title'>
-			<a href="{{ site.path }}{{ post.url }}">
-				{{ post.title }}
-			</a>
-		</h3>
-		<div class="post-date">{{ post.date | date: "%F" }}</div>
-		{{ post.brief_introduction }}
-	</article>
-	{% endfor %} -->
-
-	<!-- {% for post in site.posts %}
-	 第一行 
-	{% unless post.previous %}
-	<h2>{{ post.date | date: '%B %Y' }}</h2>
-	<hr>
-	{% endunless %}
-
-	<article class='post'>
-		<h3 class='post-title'>
-			<a href="{{ site.path }}{{ post.url }}">
-				{{ post.title }}
-			</a>
-		</h3>
-		<div class="post-date">{{ post.date | date: "%F" }}</div>
-		{{ post.brief_introduction }}
-	</article>
-	{% if post.next %}
-	{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-	{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-	{% capture mon %}{{ post.date | date: '%M' }}{% endcapture %}
-	{% capture nmon %}{{ post.next.date | date: '%M' }}{% endcapture %}
-	{% if year != nyear or mon != nmon %}
-	<h2>{{ post.next.date | date: '%B %Y' }}</h2>
-	<hr>
-	{% endif %}
-	{% endif %}
-	{% endfor %}
-</ul> -->
 
 <ul>
 	{% assign postsByYearMonth = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" %}
@@ -67,7 +11,8 @@ permalink: /timeline/
 	{% assign year = yearMonth.name | slice: 0, 4 %}
 	{% assign month = yearMonth.name | slice: 5, 2 %}
 
-	<h2>{{ year }} - {{ month | date: "%B" }}</h2>
+	<h2>{{ post.next.date | date: '%B %Y' }}</h2>
+	<hr>
 
 	<ul>
 		{% for post in yearMonth.items %}
