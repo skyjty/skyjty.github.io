@@ -8,10 +8,8 @@ permalink: /timeline/
 <ul>
 	{% assign postsByYearMonth = site.posts | group_by_exp: "post", "post.date | date: '%Y-%m'" %}
 	{% for yearMonth in postsByYearMonth %}
-	{% assign year = yearMonth.name | slice: 0, 4 %}
-	{% assign month = yearMonth.name | slice: 5, 2 %}
 
-	<h2>{{ post.next.date | date: '%B %Y' }}</h2>
+	<h2>{{ yearMonth.items[0].date | date: '%B %Y' }}</h2>
 	<hr>
 
 	<ul>
