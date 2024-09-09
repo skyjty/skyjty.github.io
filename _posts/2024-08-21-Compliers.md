@@ -84,20 +84,20 @@ $d^* (dd^* | \epsilon)(e(+|-|\epsilon)dd^* |\epsilon)$
 $L(x)$指正则表达式对应的集合；
 
 正规式的简化：
-- 1.简化正规式描述
-  - $x^* = x^+ | \epsilon$
-  - $r?=r|\epsilon$
-  - $L([abc]) = \{a|b|c\}$
-  - $[0-9a-z] = [012...789abc...xyz]$
-  - $\Sigma = \{a,b,c,d,e,f,g,h\} , L([\space \^{} abc]) = \{d,e,f,g,h\}$
-- 2.引入辅助定义式（变量）
-  - $char=[a-z\space A-Z]$
-  - $digit=[0-9]$
-  - $digits=digits^+$
-  - $optional\_ fraction=(. digits)?$ //纯小数
-  - $optional\_ exponent=(E(+|-)?\space digits)?$ //整数
-  - $id=char(char|digit)$//首位为字母开头的id字符串
-  - $num=digit\space optional\_ fraction\space optional\_ exponent$ //数字字符串
+1.简化正规式描述
+  $x^* = x^+ | \epsilon$
+  $r?=r|\epsilon$
+  $L([abc]) = \{a|b|c\}$
+  $[0-9a-z] = [012...789abc...xyz]$
+  $\Sigma = \{a,b,c,d,e,f,g,h\} , L([\space \^{} abc]) = \{d,e,f,g,h\}$
+2.引入辅助定义式（变量）
+  $char=[a-z\space A-Z]$
+  $digit=[0-9]$
+  $digits=digits^+$
+  $optional\_ fraction=(. digits)?$ //纯小数
+  $optional\_ exponent=(E(+|-)?\space digits)?$ //整数
+  $id=char(char|digit)$//首位为字母开头的id字符串
+  $num=digit\space optional\_ fraction\space optional\_ exponent$ //数字字符串
 
 ### 2.3 有限自动机（有限状态机）
 能否确定下一个状态将自动机分为确定型与非确定型。
