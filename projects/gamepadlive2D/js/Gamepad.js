@@ -32,7 +32,7 @@ class Gamepad {
 
         if(window.location.origin == "file://"){}//是否为本地访问，本地访问不更新URL
         else{
-            this.updateUrlParams(this.getUrlParams());
+            // this.updateUrlParams(this.getUrlParams());
         }
 
         if(!this.testmode){
