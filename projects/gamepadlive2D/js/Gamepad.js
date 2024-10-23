@@ -32,7 +32,7 @@ class Gamepad {
 
         if(window.location.origin == "file://"){}//是否为本地访问，本地访问不更新URL
         else{
-            // this.updateUrlParams(this.getUrlParams());
+            this.updateUrlParams(this.getUrlParams());
         }
 
         if(!this.testmode){
@@ -263,6 +263,7 @@ class Gamepad {
             // 监听按下键盘按键的事件
             $(document).on('keydown', function(event) {
                 var flag = true;
+                var Leftstick = true;
                 var keypressed = event.key;
                 console.log(keypressed+" pressed");
                 if(keypressed === "s"){
@@ -364,19 +365,19 @@ class Gamepad {
                     );
 
                     if(keypressed === "i"||keypressed === "I"){
-                        var axis = (parseFloat($axis.attr("data-value-y"))-0.01).toString();
+                        var axis = (parseFloat($axis.attr("data-value-y"))-0.1).toString();
                         $axis.attr("data-value-y", axis);
                     }
                     else if(keypressed === "m"||keypressed === "M"){
-                        var axis = (parseFloat($axis.attr("data-value-y"))+0.01).toString();
+                        var axis = (parseFloat($axis.attr("data-value-y"))+0.1).toString();
                         $axis.attr("data-value-y", axis);
                     }
                     else if(keypressed === "j"||keypressed === "J"){
-                        var axis = (parseFloat($axis.attr("data-value-x"))-0.01).toString();
+                        var axis = (parseFloat($axis.attr("data-value-x"))-0.1).toString();
                         $axis.attr("data-value-x", axis);
                     }
                     else if(keypressed === "k"||keypressed === "K"){
-                        var axis = (parseFloat($axis.attr("data-value-x"))+0.01).toString();
+                        var axis = (parseFloat($axis.attr("data-value-x"))+0.1).toString();
                         $axis.attr("data-value-x", axis);
                     }
 
@@ -384,10 +385,20 @@ class Gamepad {
                     const axisX = $axis.attr("data-value-x");
                     const axisY = $axis.attr("data-value-y");
 
-                    if ($axis.is(".stick")) {
+                    if ($axis.is(".stick.left")) {
                         $axis.css({
                             "margin-top": axisY * 25,
                             "margin-left": axisX * 25,
+                            transform: `rotateX(${-parseFloat(
+                                axisY * 30,
+                                8
+                            )}deg) rotateY(${parseFloat(axisX * 30, 8)}deg)`,
+                        });
+                    }
+                    else{
+                        $axis.css({
+                            "margin-bottom": axisY * -25,
+                            "margin-right": axisX * -25,
                             transform: `rotateX(${-parseFloat(
                                 axisY * 30,
                                 8
