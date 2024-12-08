@@ -91,6 +91,24 @@ tags: notes
     - [5.2.2 类图 Class Diagram](#522-类图-class-diagram)
     - [5.2.3 对象图 Object Diagram](#523-对象图-object-diagram)
     - [5.2.4 状态图 State Diagram](#524-状态图-state-diagram)
+    - [5.2.5 协作（通信）图 Communication Diagram](#525-协作通信图-communication-diagram)
+    - [5.2.6 序列图 Sequence Diagram](#526-序列图-sequence-diagram)
+    - [5.2.7 活动图 Activity Diagram](#527-活动图-activity-diagram)
+    - [5.2.8 包图 Package Diagram](#528-包图-package-diagram)
+    - [5.2.9 组件图 Component Diagram](#529-组件图-component-diagram)
+    - [5.2.10 部署图 Deployment Diagram](#5210-部署图-deployment-diagram)
+- [6 软件体系结构评估](#6-软件体系结构评估)
+  - [6.1 体系结构评估](#61-体系结构评估)
+  - [6.2 ATAM The Architecture Trade-Off Analysis Method](#62-atam-the-architecture-trade-off-analysis-method)
+      - [目标](#目标)
+      - [优点](#优点)
+      - [人员](#人员)
+    - [评估阶段](#评估阶段)
+      - [Phase1](#phase1)
+      - [Phase2](#phase2)
+      - [Phase3](#phase3)
+        - [**效用树 Utility Tree**](#效用树-utility-tree)
+        - [敏感点、权衡点、风险、非风险](#敏感点权衡点风险非风险)
 
 ## 1 绪论
 ### 1.1 软件体系结构的发展史
@@ -791,14 +809,144 @@ UML的优势主要体现在其通用性、标准化、工具支持和灵活性�
 ![图六]({{site.path}}/public/image/2024_12_05_1_6.png "类图")
 
 #### 5.2.3 对象图 Object Diagram
-对象图是某个时间点系统中对象的快照，因为它显示的是实例而不是类，所以通常称为实例图。
+对象图是某个时间点系统中**对象的快照**，因为它显示的是实例而不是类，所以通常称为实例图。
 ![图七]({{site.path}}/public/image/2024_12_05_1_7.png "对象图")
 
 #### 5.2.4 状态图 State Diagram
+状态图是描述类的对象所有可能的**状态**以及事件发生时状态的**转移条件**。通常，状态图是对类图的补充。
+![图八]({{site.path}}/public/image/2024_12_05_1_8.png "状态图")
+
+
 //待补充
-协作（通信）图 Communication Diagram
-序列图 Sequence Diagram
-活动图 Activity Diagram
-包图 Package Diagram
-组件图 Component Diagram
-部署图 Deployment Diagram
+#### 5.2.5 协作（通信）图 Communication Diagram
+协作图是一种**交互图**，强调的是发送和接收消息的对象之间的组织结构。一个协作图显示了一系列的对象及对象之间的联系以及对象间发送和接收的消息。
+![图九]({{site.path}}/public/image/2024_12_05_1_9.png "协作图")
+
+#### 5.2.6 序列图 Sequence Diagram
+在软件工程中，序列图是对象交互的一种表现方式。主要用于按照交互发生的一系列顺序，显示对象之间的这些交互。
+![图十]({{site.path}}/public/image/2024_12_05_1_10.png "序列图")
+
+#### 5.2.7 活动图 Activity Diagram
+描述满足用例要求所要进行的活动以及活动间的约束关系，有利于识别并行活动。
+![图十一]({{site.path}}/public/image/2024_12_05_1_11.png "活动图")
+
+#### 5.2.8 包图 Package Diagram
+包是在UML中用类似于文件夹的符号表示的模型元素的组合，允许从UML中获取任何结构，并将其元素分组到**更高级别**的单元中。
+![图十二]({{site.path}}/public/image/2024_12_05_1_12.png "包图")
+
+#### 5.2.9 组件图 Component Diagram
+组件图描述代码构件的**物理结构**及各构件之间的依赖关系。将系统划分为组件并希望通过接口或组件细分为较低级别的结构来显示其相互关系。
+![图十三]({{site.path}}/public/image/2024_12_05_1_13.png "组件图")
+
+#### 5.2.10 部署图 Deployment Diagram
+部署图定义系统中软硬件的**物理体系结构**。描述了一个运行时的硬件结点，以及在这些结点上运行的软件组件的静态视图。 显示了系统的硬件，安装在硬件上的软件，以及用于连接异构的机器之间的中间件。
+![图十四]({{site.path}}/public/image/2024_12_05_1_14.png "部署图")
+
+## 6 软件体系结构评估
+### 6.1 体系结构评估
+**定义**
+
+**Architecture evaluation** is a *development life-cycle activity* whereby several *stakeholders*（项目干系人） analyze the software architecture together in a formal or informal（正式或非正式）process using an assessment technique such as scenarios（场景）. 
+
+**架构评估**是软件*开发生命周期中一个活动*，在此活动中，相关*项目干系人*使
+用评估技术（如场景），在一个正式或非正式的过程中一起分析软件架构。
+
+### 6.2 ATAM The Architecture Trade-Off Analysis Method
+ATAM（The Architecture Trade-Off Analysis Method）的灵感主要来自于3个方面：**软件体系结构风格的概念**、**质量属性分析**和**SAAM**。之所以称为ATAM，是因为这种方法不仅可以揭示出软件架构对特定质量目标的满足情况，而且能够更清楚地认识到质量属性之间的联系，即如何权衡诸多质量属性。
+
+ATAM是 SAAM的一个细化，特别关注**可修改性**、**性能**、**可用性**和**安全性**。
+
+##### 目标
+- 不是提供精确的分析，是发现由体系结构决策产生的风险
+- 我们希望找到趋势：体系结构决策和系统属性预测之间的相关性
+
+##### 优点
+- 进行ATAM评估的优点
+  - 确定风险
+  - 明确质量属性需求
+  - 完善体系结构文档
+  - 体系结构决策的文档化基础
+  - 加强利益相关者之间的沟通
+- ATAM的结果是改进后的体系结构
+
+##### 人员
+- 评估小组
+  - 每个评估团队由一名领导和至少三名其他团队成员组成。
+  - ATAM团队成员必须是经验丰富的体系架构师。
+  - ATAM领导者必须具备出色的沟通和促进技能。
+- 项目决策者
+  - 能够控制程序开发过程和授权变更的人员。
+  - 通常包含项目经理，为开发买单的用户，和体系结构开发人员
+- 构架涉众
+  - 涉众是与要开发的系统相关的一切人和事。
+  - 体系结构对可修改性、安全性等质量属性的支持程度会直接影响到涉众人员的正常工作的进行。
+  - 涉众不等于用户，通常意义的user是指系统的使用者，这仅是涉众中的一部分。 
+  - 涉众通常包括开发者，测试人员，集成人员，系统维护者，性能工程师，用户等等。
+
+#### 评估阶段
+四个阶段
+
+- 阶段0 合作与准备
+  - 这一阶段先于技术评估
+  - 持续时间：不定
+  - 会议：主要是电话、电子邮件
+- 阶段1 初步评估
+  - 专注于获取详细的体系结构信息并对其进行分析
+- 阶段2 完成评估
+  - 以上两个阶段：
+  - 持续时间：阶段1和阶段2分别为1.5-2天
+  - 会议：通常在客户现场进行
+- 阶段3 后续工作
+  - 持续时间：不定
+  - 会议：主要是电话、电子邮件
+
+##### Phase1
+
+1. 评估小组对ATAM进行介绍
+2. 客户描述系统的商业动机
+3. 设计师介绍体系结构设计的概述。
+4. 确定核心体系结构方法
+5. 通过构建[效用树](#效用树-utility-tree)来识别、确定优先级并优化最重要的质量属性目标。
+6. 评估团队从特定质量属性的角度探索体系结构方法以识别风险。
+
+##### Phase2
+
+涉及更多的**利益相关者**
+重点是激发不同**利益相关者的观点**，并**验证**第一阶段的结果。
+
+7. 头脑风暴并对场景进行优先级排序
+8. 分析体系结构方法
+9. 概括ATAM的所有步骤，并显示ATAM输出。
+
+##### Phase3
+主要包括为客户制作最终报告，以及反映评估和ATAM材料的质量。
+
+- 执行摘要
+- ATAM的介绍
+- 商业动机和体系结构的描述
+- 第 1 阶段和第 2 阶段场景和效用树列表
+- 第 1 阶段和第 2 阶段分析：体系结构方法、决策、风险、敏感性、权衡和非风险
+- 风险主题
+- 接下来的步骤
+
+###### **效用树 Utility Tree**
+
+![图十五]({{site.path}}/public/image/2024_12_05_1_14.png "效用树")
+
+###### 敏感点、权衡点、风险、非风险
+
+**敏感点**是影响一个或多个组件（或组件关系）的特性，对于实现特定质量属性响应至关重要。
+
+A **sensitivity point** is a property of one or more components (and/or component relationships) that is critical for achieving a particular quality attribute response.
+
+**权衡点**是影响多个质量属性的特性，是多个质量属性的敏感点。
+
+A tradeoff point is a property that affects more than one attribute and is a sensitivity point for more than one attribute.
+
+**风险**是一个存在潜在问题的体系结构决策。
+
+A riskis a potentially problematic architectural decision.
+
+**非风险**是经分析认为安全的良好体系结构决策。
+
+Non-risksare good architectural decisions that are deemed safe upon analysis.
