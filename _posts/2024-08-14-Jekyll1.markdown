@@ -2,7 +2,7 @@
 layout: post
 title:  Jekyll部署文档(1 Jekyll美化)
 date:   2024-08-14 12:51:59 +0800
-last_change_date: 2024-08-14 12:51:59 +0800
+last_change_date: 2024-12-08 14:00:00 +0800
 categories: web
 brief_introduction: 本博客美化过程
 tags: Jekyll
@@ -60,7 +60,11 @@ to be edit
 
 ### 2.4 sidebar.html
 这是目前笔者编辑较多的一个模块
-在sidebar中笔者添加了目录功能，参考了https://github.com/ghiculescu/jekyll-table-of-contents/tree/master。笔者计划在后续内容中将目录完全移植到侧边栏上。
+在sidebar中笔者添加了目录功能，参考了https://github.com/ghiculescu/jekyll-table-of-contents/tree/master。
+
+~~笔者计划在后续内容中将目录完全移植到侧边栏上。~~
+
+由于大部分目录并不能完全放在侧边栏，后续计划在页面内添加目录，等待后续更新...
 
 ## 3 文章页面
 对于文章页面笔者并未进行过多的修改，只是在标题下利用Liquid进行了文章相关信息的添加，以及文章末尾的最近文章引导读者到别的网页进行浏览的操作。
