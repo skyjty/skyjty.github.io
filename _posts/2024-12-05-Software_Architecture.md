@@ -27,7 +27,7 @@ tags: notes
       - [管道](#管道)
       - [优缺点](#优缺点-1)
       - [批处理 VS 管道-过滤器](#批处理-vs-管道-过滤器)
-    - [3.1.2 过程控制](#312-过程控制)
+    - [3.1.3 过程控制](#313-过程控制)
       - [适用场合](#适用场合)
   - [3.2 调用/返回 Call/Return Style](#32-调用返回-callreturn-style)
     - [特点](#特点)
@@ -52,7 +52,7 @@ tags: notes
     - [3.4.1 解释器 Interpreter Style](#341-解释器-interpreter-style)
       - [定义](#定义-6)
       - [优缺点](#优缺点-5)
-    - [3.4.2 规则系 Rule-based System Style](#342-规则系-rule-based-system-style)
+    - [3.4.2 规则系统 Rule-based System Style](#342-规则系统-rule-based-system-style)
       - [定义](#定义-7)
       - [优缺点](#优缺点-6)
   - [3.5 独立构件 Independent Components Style](#35-独立构件-independent-components-style)
@@ -231,16 +231,16 @@ Disadvantage:
 
 ##### 定义
 - **构件：过滤器，处理数据流**(Components: Filters —process data streams )
- - 一个过滤器封装了一个处理步骤(A filter encapsulates a processing step (algorithm or computation) )
- - 数据源点和数据终止点可以看作是特殊的过滤器(Data source and data end/sink are particular filters )
+  - 一个过滤器封装了一个处理步骤(A filter encapsulates a processing step (algorithm or computation) )
+  - 数据源点和数据终止点可以看作是特殊的过滤器(Data source and data end/sink are particular filters )
 - **连接件：管道，连接一个源和目的过滤器**(Connectors: A pipe connects a source and a end filter )
- - 管道将数据从过滤器输出移动到过滤器输入( Pipes move data from a filter output to a filter input)
- - 数据可以是ASCII字符流( Data may be a stream of ASCII characters)
+  - 管道将数据从过滤器输出移动到过滤器输入( Pipes move data from a filter output to a filter input)
+  - 数据可以是ASCII字符流( Data may be a stream of ASCII characters)
 - **拓扑**(Topology)
- - 连接件定义数据流图(Connectors define data flow graph) 
+  - 连接件定义数据流图(Connectors define data flow graph) 
 - **约束**(Constraint)
- - 过滤器必须是独立实体
- - 过滤器无需了解数据流的源头与去处
+  - 过滤器必须是独立实体
+  - 过滤器无需了解数据流的源头与去处
 
 ##### 过滤器
 特点：
@@ -270,12 +270,13 @@ Advantage:
 - 具有较强可维护性和可扩展性
 - 支持吞吐量、死锁等属性分析
 - 支持并行执行
+
 Disadvantage:
 - 不适合处理交互的应用
 - 系统性能不高，编写过滤器的复杂性增加
- - 数据传输缺乏通用标准
- - 时间消耗在格式转换上
- - 不适用于需要大量共享数据的应用
+  - 数据传输缺乏通用标准
+  - 时间消耗在格式转换上
+  - 不适用于需要大量共享数据的应用
 
 ##### 批处理 VS 管道-过滤器
 相同点：
@@ -290,7 +291,7 @@ Disadvantage:
 |延迟高，实时性差 (high latency)|实时性好 (results starts processing)|
 |无并发(no concurrency)|可并发(concurrency possible)|
 
-#### 3.1.2 过程控制
+#### 3.1.3 过程控制
 闭环控制有2种形式：反馈控制和前馈控制
 - 反馈控制器根据受控变量的测量值来调整过程
 - 前馈控制通过测量其他过程变量，来预计输入变量对被控变量将产生的影响。基于这些变量来调整过程，在实际中更有价值
@@ -360,6 +361,7 @@ Disadvantage:
 ##### 优缺点
 Advantage:
 - 适合模拟现实世界
+
 Disadvantage:
 - 海量的对象需要额外的结构来容纳
 - 单一的接口能力有限并且笨拙（”友元”可改善）
@@ -386,8 +388,8 @@ Disadvantage:
   - 修改一层，最多影响两层，而通常只能影响上层。如接口稳固，则不影响其它层
   - 上层必须知道下层的身份，不能调整层次之间的顺序
 
-/*        我附庸的附庸不是我的附庸         */
-/*  Web应用程序、企业信息系统、物流网系统   */
+/\*        我附庸的附庸不是我的附庸         \*/
+/\*  Web应用程序、企业信息系统、物流网系统   \*/
 
 ##### 层次系统的特例：客户端/服务器风格
 //PPT并未详细提及，暂时忽略
@@ -419,6 +421,7 @@ Advantage:
 - 适用于复杂的逻辑系统
 - 提高了数据的一致性和可靠性
 - 由于构件具有独立性，系统容易适应变化和扩展。
+
 Disadvantage:
 - 数据结构、类型进行变化的难度高
 - 单点故障问题
@@ -446,12 +449,13 @@ Advantage:
 - 可修改性高，系统易于维护和扩展
 - 对分布式计算支持好
 - 知识源具有可重用性
+
 Disadvantage:
 - 黑板的结构变化容易影响知识源
 - 可能存在无解的情况
 - 求近似最优解时，计算终止的条件难以决定
 
-//数模C题都挺类似的
+//数模中的题目都挺类似的
 
 ### 3.4 虚拟机 VirtualMachine Style
 虚拟机体系结构风格（VirtualMachine Style）为某种符号、脚本语言或源程序语言提供一个仿真的运行环境。典型子风格包括解释器体系结构风格和规则系统体系结构风格。
@@ -476,7 +480,7 @@ Disadvantages:
 - 牺牲了性能
 - 增加了测试的难度
 
-#### 3.4.2 规则系 Rule-based System Style
+#### 3.4.2 规则系统 Rule-based System Style
 **规则系统体系结构风格**（Rule-based System Style）是解释器体系结构风格的特例（需要被解释执行的是规则），适用于需要根据特定规则进行决策和操作的应用程序（推理系统、业务流程管理系统等）
 
 ##### 定义
@@ -492,6 +496,7 @@ Advantages:
 - 规则具有可重用性（可在多个应用/平台中共享）
 - 管理系统业务规则的难度降低（可由运营人员管理）
 - 独立的规则库易于更新
+
 Disadvantages:
 - 系统复杂性高（规则可能会有冲突和遗漏）
 - 可能导致性能问题
@@ -527,8 +532,7 @@ Disadvantages:
 
 |特点|描述|
 |-|-|
-|分离的交互|事件发布者并不会意识到事件订阅者的存在|
-||事件的触发者并不知道哪些构件会被这些事件影响|
+|分离的交互|事件发布者并不会意识到事件订阅者的存在<br>事件的触发者并不知道哪些构件会被这些事件影响|
 |构件独立|各个构件之间彼此之间无连接关系，各自独立存在，通过对事件的发布和注册实现关联。|
 |一对多通信|采用发布/订阅消息传递，一个特定事件可以影响多个订阅者。|
 |基于事件的触发|由事件触发过程调用，不能假定构件的处理顺序，甚至不知道哪些过程会被调用。|
@@ -617,9 +621,9 @@ Disadvantages:
     - Exceptions（异常）
 - 方向2：故障恢复
   - 如何恢复正确的结果
-    - 投票 /*EVA-MAGI*/ Vote
+    - 投票 /\* EVA-MAGI \*/ Vote
     - 主动/被动冗余 Active/Passive redundancy
-    - 内测（补丁） Closed beta
+    - 内测（补丁） //Closed beta
     - 检查点/回滚 Checkpointing/Rollback
 - 方向3：故障避免
   - 如何主动减少故障的发生 
@@ -677,6 +681,7 @@ Disadvantages:
     - 配置文件
     - 发布/订阅模式
     - 多态
+
 ### 4.5 性能 Performance
 **性能**指软件系统在给定条件下执行任务或提供服务时所展现的**效率或速度**。
 
@@ -1018,7 +1023,7 @@ Non-risksare good architectural decisions that are deemed safe upon analysis.
     - Exceptions（异常）
 - 方向2：故障恢复
   - 如何恢复正确的结果
-    - 投票 /*EVA-MAGI*/ Vote
+    - 投票 /\*EVA-MAGI\*/ Vote
     - 主动/被动冗余 Active/Passive redundancy
     - 内测（补丁） Closed beta
     - 检查点/回滚 Checkpointing/Rollback
