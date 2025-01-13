@@ -34,7 +34,7 @@ project: GamepadLive2D
 
 笔者于2022年生日前购买了xbox one手柄作为自己的生日礼物，之后就用于游玩艾尔登法环，Apex，泰坦陨落2等游戏。通过obs录制相关实况时，笔者希望观众能够看到笔者的操作，故在利用[gamepadviewer](https://gamepadviewer.com/)在画面中添加了手柄按键显示，效果较好。但由于服务器不在国内，有时候不能正常显示；同时有时候笔者忘记切换obs导致画面中出现手柄未连接的图像，故后更换为国内类似的产品，但总是出现不同的问题，同时笔者需要一个练手的前端项目，学习jQuery，故准备在博客或本地部署使用。
 
-![图一]({{site.path}}/public/image/2024_07_24_1_1.png "未连接手柄时截取的内容")
+![图一]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_1.png "未连接手柄时截取的内容")
 
 由于笔者使用过的[gamepadviewer](https://gamepadviewer.com/)并没有在Github上开源且找不到源代码，笔者参考了另一个类似的项目[gamepad.e7d.io](https://gamepad.e7d.io/)（以下称原项目或e7d项目）。
 
@@ -516,7 +516,7 @@ window.gamepad = new Gamepad();
 
 在这个测试版本中笔者直接将原项目中的异步加载函数删除，结果发现一段时间之后浏览器的内存被完全占用，帧数较原版低的多，显示如下图：
 
-![图二]({{site.path}}/public/image/2024_07_24_1_2.png "浏览器内存占用查看")
+![图二]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_2.png "浏览器内存占用查看")
 
 笔者在阅读代码后发现原项目中主要负责刷新的函数`pollStatus()`中存在`window.requestAnimationFrame`方法，该方法告知浏览器准备下一帧的刷新，在本次渲染结束后调用传给该方法的参数。该方法没有控制刷新速度的参数，基本采用大部分网页的默认渲染速度60Hz，而运行自定义渲染速度的方法`window.setInterval`不能保证回调函数在屏幕每一次刷新间隔中只被执行一次，由于js不允许用户自己进行内存管理，故笔者将渲染交给`window.requestAnimationFrame`管理。继续阅读发现原项目将上述两个方法嵌套使用，即每200ms调用一次`pollStatus()`，该函数递归调用`window.requestAnimationFrame`方法，造成多个递归函数同时运行，短时间内就占满了内存。这可能由于笔者删去了异步相关代码引起的。此处笔者将`window.setInterval`删去，单独调用递归函数进行渲染。
 
@@ -567,14 +567,14 @@ gamepad api对于每一个按钮包含两个参数，分别是pressed(bool)与va
 
 优化后的内存占用：
 
-![图三]({{site.path}}/public/image/2024_07_24_1_3.png "EDGE浏览器内存占用查看")
-![图四]({{site.path}}/public/image/2024_07_24_1_4.png "Chrome浏览器内存占用查看")
+![图三]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_3.png "EDGE浏览器内存占用查看")
+![图四]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_4.png "Chrome浏览器内存占用查看")
 
 Edge中500ms中渲染了33帧画面，基本上满足60帧的渲染速度，而Chrome中100ms达到了惊人的20帧，可以满足200帧左右的渲染速度（这就是谷歌工程师头发的结晶吗）。
 以下是随机选取的100ms左右的渲染调用：
-![图五]({{site.path}}/public/image/2024_07_24_1_5.png "EDGE浏览器内存占用查看")
+![图五]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_5.png "EDGE浏览器内存占用查看")
 Edge:89ms,5frame
-![图六]({{site.path}}/public/image/2024_07_24_1_6.png "Chrome浏览器内存占用查看")
+![图六]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_6.png "Chrome浏览器内存占用查看")
 Chrome:94ms,20frame
 
 内存占用Chrome比Edge高一些，前者最高6MB，后者最高4MB，占用都比较低。作为对比，bilibili主页加载的占用最高大概在30MB到50MB。
@@ -588,16 +588,16 @@ Chrome:94ms,20frame
 #### 2.3.1 工具使用
 笔者在高中有使用Autodesk Inventor（下称Invntor）进行3D建模的经历，对其中的草图编辑方式有初步的了解，十分喜欢这种精确的编辑线条的方式，对AI中匮乏的精确位置编辑方式十分不习惯，故采用扩展性强与功能全面的Fusion，其相对于Inventor唯一的缺点是服务器在国内访问较慢，可能需要工具辅助，而且文件基本保存在云端。对于学生用户，Autodesk公司对能提供证明的学生提供教育版许可证，有效期一年，一年后可以续期。笔者高中时申请的账号已经过期，且没有续期，于是笔者使用大学的邮箱重新进行注册，与客服交流后几天就通过了审核。这个审核比较宽松，基本上国内的大部分学校都能使用。
 
-![图七]({{site.path}}/public/image/2024_07_24_1_7.png "Fusion使用界面")
+![图七]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_7.png "Fusion使用界面")
 
 笔者搜索（[参考](https://www.youtube.com/watch?v=x4CR3nXSN-A)）后在Fusion的插件商店中找到了[Shaper Utilities](https://apps.autodesk.com/FUSION/en/Detail/Index?id=3662665235866169729)，该插件允许你将Fusion中的草图或者对象的二维平面导出为svg格式的图像，但导出的质量一般，可自定义的内容不多，后期需要在AI中进一步编辑。由于笔者不习惯使用AI，大部分后期修改内容也都是在Fusion中完成后导出的，AI仅仅起到一个上色与预览效果的作用。以下为效果预览：
 
-![图八]({{site.path}}/public/image/2024_07_24_1_8.png "AI 未按下预览")
-![图⑨]({{site.path}}/public/image/2024_07_24_1_9.png "AI 按下预览")
+![图八]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_8.png "AI 未按下预览")
+![图⑨]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_9.png "AI 按下预览")
 
 需要注意的是在AI中导入svg文件进行编辑前需要创建文件单位为毫米，之后修改为像素(px)。如果直接导入的话可能会产生下图中的情况：
 
-![图拾]({{site.path}}/public/image/2024_07_24_1_10.png "导入错误？")
+![图拾]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_10.png "导入错误？")
 
 这个错误也有可能是光栅效果中的高ppi导致的（检查了一下并不是），总之记得先设置为毫米单位。
 
@@ -611,15 +611,15 @@ Chrome:94ms,20frame
 
 - 从AI中读出的数据并不代表所在的位置，通过AI的标注输获得的数据大部分仍需测试修改，造成这种现象可能的的原因是在AI中导出图片时会将线的宽度计算在图片大小中，而AI测量只能对线，点进行测量，没有考虑线宽；也有可能是AI存在一定误差，总之位置需要修改。
 
-![图十一]({{site.path}}/public/image/2024_07_24_1_11.png "数据差距")
+![图十一]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_11.png "数据差距")
 
 - 路径填充的部分可能会存在一定的渲染问题。在外面将图片缩小后有可能浏览器为了节省资源而将曲线修改成了连续的直线段，当这种情况发生在两个色块的交界处时可能会将背景显示出来。有两种解决方法，一是将两者的交集的区域加大，减少露出背景的可能，二是将背景设置为某个颜色，露出与不露出的结果差距不大，三是“鸵鸟策略（虽然鸵鸟并不会这么做）”，直接放弃修改，理由是缩小后露出的背景较为均匀，看上去像是故意添加的描边，同时过小也不易察觉。
 
-![图十二]({{site.path}}/public/image/2024_07_24_1_12.png "漏背景举例")
+![图十二]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_12.png "漏背景举例")
 
 - 为了调试方便，可以直接在浏览器控制台中对数值进行修改，再将数据填写到css中，不过要及时记好数值，否则修改文件后网页刷新，测试修改的内容都会重置。
 
-![图十三]({{site.path}}/public/image/2024_07_24_1_13.png "直接修改css")
+![图十三]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_13.png "直接修改css")
 
 测试与调整花了我2天的时间，最后的结果差强人意，之后的扩展可能比较麻烦，留给未来的自己吧。
 
@@ -630,11 +630,11 @@ Chrome:94ms,20frame
 ### 3.1 拉取项目
 
 访问项目的[github网页](https://github.com/skyjty/MyGamepadViewer)（可能需要魔法），点击Code-Download ZIP：
-![图十四]({{site.path}}/public/image/2024_07_24_1_14.png "下载文件")
+![图十四]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_14.png "下载文件")
 
 或者点击[这里](https://github.com/skyjty/MyGamepadViewer/archive/refs/heads/main.zip)下载，两者都是github的源。
 将文件解压到某个文件夹中，项目就下载到本地了。
-![图十五]({{site.path}}/public/image/2024_07_24_1_15.png "下载文件")
+![图十五]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_15.png "下载文件")
 
 记得点击资源管理器的地址复制一下项目位置，方便在obs中插入。
 
@@ -642,13 +642,13 @@ Chrome:94ms,20frame
 
 如果你还没有安装obs建议到steam中下载，steam会自动保持在最新版，使用也方便。
 在obs中的来源下点击加号-浏览器：
-![图十六]({{site.path}}/public/image/2024_07_24_1_16.png "添加浏览器源")
+![图十六]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_16.png "添加浏览器源")
 
 随便设置一个名字，在之后的设置中按下图进行调整：
-![图十七]({{site.path}}/public/image/2024_07_24_1_17.png "浏览器源设置")
+![图十七]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_17.png "浏览器源设置")
 
 动一动你的手柄，此时便会出现在你的录制窗口中；如果拔出手柄，手柄会从屏幕中消失：
-![图十八]({{site.path}}/public/image/2024_07_24_1_18.png "obs预览")
+![图十八]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_18.png "obs预览")
 
 你可以对浏览器源的位置与大小进行一些调整以适应录制的画面。
 
@@ -669,7 +669,7 @@ Chrome:94ms,20frame
 这是笔者不主要考虑的问题，因为笔者仅仅在windows平台下有使用obs录制的需求，但由于笔者测试Jekyll的平台构建在Linux下，在此记录一些问题：
 - 在本地测试时，链接发生重置，指向了原本的主页，刷新后加载主页，需要重新进入
 - 在linux下的edge浏览器发生字体错误的情况，以后更新的svg应该会将字体作为图片导出避免字体导致的问题。
-![图十九]({{site.path}}/public/image/2024_07_24_1_19.png "字体错误")
+![图十九]({{site.path}}/public/image/2024-07-24-GamepadLive2D/2024_07_24_1_19.png "字体错误")
 - 相比于windows，本项目在linux中的位置有些错位，可能是小数点像素导致了，以后最好使用整数进行编辑。
 
 <!-- url传递参数 completed!-->

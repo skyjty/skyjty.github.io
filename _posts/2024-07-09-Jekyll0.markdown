@@ -88,7 +88,7 @@ GitHub Page是github免费提供的一项服务，允许用户通过自己的项
 ### 1.1 win10的重装
 在微软官网搜索并下载([链接](https://www.microsoft.com/zh-cn/software-download/windows10))，选择“立刻下载工具”，下载并运行启动盘制作工具，烧录至u盘中。该u盘能被系统正常识别。（linux的不能）
 
-![图一]({{site.path}}/public/image/2024_07_09_2_1.png "立刻下载工具")
+![图一]({{site.path}}/public/image/2024-07-09-Jekyll0/2024_07_09_2_1.png "立刻下载工具")
 
 将u盘插入笔记本，搜索笔记本厂商进入bios方法，华硕为打开后猛按F2(?)即可进入bios。进入bios后设置从u盘启动系统，(此处可能需要更改安全选项)，安装后一路确定直到询问：“你想执行哪种类型的安装？”此处选择自定义，将所有分区删除，然后一路确定。
 
@@ -101,7 +101,7 @@ GitHub Page是github免费提供的一项服务，允许用户通过自己的项
 
 选择完后[下载对应版本](https://ubuntu.com/download/desktop)，保存iso文件。利用烧录软件将u盘烧录为启动盘，笔者使用软件为[rufus](https://rufus.ie/zh/)，选择镜像和u盘后等待烧录。注意此处u盘在烧录完之后无法被windows系统正常识别，是正常现象。
 
-![图二]({{site.path}}/public/image/2024_07_09_2_2.png "无法正常识别")
+![图二]({{site.path}}/public/image/2024-07-09-Jekyll0/2024_07_09_2_2.png "无法正常识别")
 
 在win系统中启动磁盘管理，右键磁盘，属性，卷，查看磁盘分区格式，笔者为GUID分区表(GPT)格式，若为主启动记录(MBR)后续步骤会有所区别，请参照[Windows 和 Ubuntu 双系统的安装和卸载](https://www.bilibili.com/video/BV1554y1n7zv/?p=7&share_source=copy_web&vd_source=5369508827737182630a32e3bfd0d7ac)进行后续安装。
 
@@ -212,7 +212,7 @@ sudo /etc/init.d/ssh start                      #启动SSH初始化
 service SSH start                               #启动SSH服务
 ssh localhost                                   #测试SSH状态
 ```
-![图三]({{site.path}}/public/image/2024_07_09_2_3.png "ssh正常运行")
+![图三]({{site.path}}/public/image/2024-07-09-Jekyll0/2024_07_09_2_3.png "ssh正常运行")
 打开WinSCP，参考文章中使用SFTP被拒绝，笔者没有且能正常使用，故选择SFTP。输入linip，即ubuntu的ip地址，用户名与密码即ubuntu的用户名与密码，即可正常使用WinSCP。
 
 ### 3.4 设置同步文件
