@@ -27,9 +27,9 @@ origin is (100, 300);	-- 设置原点的偏移量
 rot is 0;			    -- 设置旋转角度(不旋转)
 scale is (1, 1);		-- 设置横坐标和纵坐标的比例
 for T from 0 to 200 step 1 draw (t, 0);
-                        -- 横坐标的轨迹（纵坐标为0）
+                        -- 横坐标的轨迹(纵坐标为0)
 for T from 0 to 150 step 1 draw (0, -t);
-                        -- 纵坐标的轨迹（横坐标为0）
+                        -- 纵坐标的轨迹(横坐标为0)
 for T from 0 to 120 step 1 draw (t, -t);
                         -- 函数f(t)=t的轨迹 
 ```
@@ -39,11 +39,11 @@ for T from 0 to 120 step 1 draw (t, -t);
 2. `ORIGIN` 、`ROT` 和 `SCALE` 语句只影响其后的绘图语句，且遵循最后出现的语句有效的原则。
     例如，若有下述`ROT`语句序列：
     ```python
-    ROT IS 0.7 ；  …
-    ROT IS 1.57 ； …
+    ROT IS 0.7 ; ...
+    ROT IS 1.57 ; ...
     ```
     则随后的绘图语句将按1.57而不是0.7弧度旋转。 
-3. 无论`ORIGIN` 、`ROT` 和`SCALE` 语句的出现顺序如何，图形的变换顺序总是：比例变换→旋转变换→平移变换 
+3. 无论`ORIGIN` 、`ROT` 和`SCALE` 语句的出现顺序如何，图形的变换顺序总是：比例变换-->旋转变换-->平移变换 
 4. 语言对大小写不敏感，例如`for` 、`For` 、`FOR` 等，均被认为是同一个保留字。 （处理时将所有字母大写）
 5. 语句中表达式的值均为双精度类型，旋转角度单位为弧度且为逆时针旋转，平移单位为像素点。  
 
@@ -120,21 +120,21 @@ struct Token TokenTab[] =
 
 最终文法如下：
 ```js
-Program         →   { Statement SEMICO } 
-Statement       →   OriginStatment | ScaleStatment
+Program         -->   { Statement SEMICO } 
+Statement       -->   OriginStatment | ScaleStatment
                     | RotStatment  | ForStatment
-OriginStatment  →   ORIGIN IS 
+OriginStatment  -->   ORIGIN IS 
                     L_BRACKET Expression COMMA Expression R_BRACKET
-ScaleStatment   →   SCALE IS 
+ScaleStatment   -->   SCALE IS 
                     L_BRACKET Expression COMMA Expression R_BRACKET
-RotStatment     →   ROT IS Expression
+RotStatment     -->   ROT IS Expression
 
-Expression      →   Term { ( PLUS | MINUS ) Term } 
-Term            →   Factor { ( MUL | DIV ) Factor }
-Factor  	    →   ( PLUS | MINUS ) Factor | Component
-Component       →   Atom [ POWER Component ]
+Expression      -->   Term { ( PLUS | MINUS ) Term } 
+Term            -->   Factor { ( MUL | DIV ) Factor }
+Factor  	    -->   ( PLUS | MINUS ) Factor | Component
+Component       -->   Atom [ POWER Component ]
 
-Atom            →   CONST_ID
+Atom            -->   CONST_ID
                     | T
                     | FUNC L_BRACKET Expression R_BRACKET
                     | L_BRACKET Expression R_BRACKET 
@@ -144,7 +144,7 @@ Atom            →   CONST_ID
 
 |记号|意义|
 |--         |--|
-|=          |定义（此处被替换为→）|
+|=          |定义（此处被替换为-->）|
 |,          |连接符（此处被忽略）|
 |;(SEMICO)  |结束符|
 |&#124;     |或|
@@ -247,12 +247,12 @@ Token_Type.NONTOKEN |            |    0.000000|None
 为了添加color声明语句，需要修改原先的状态转移图：
 
 ```js
-Program         →   { Statement SEMICO } 
-Statement       →   OriginStatment | ScaleStatment
+Program         -->   { Statement SEMICO } 
+Statement       -->   OriginStatment | ScaleStatment
                     | RotStatment  | ForStatment   | ColorStatment
 ...
 
-ColorStatment   →   COLOR IS 
+ColorStatment   -->   COLOR IS 
                     L_BRACKET Expression COMMA Expression COMMA Expression R_BRACKET
 ...
 ```
@@ -314,14 +314,14 @@ def Draw(self):
 
 文法如下：
 ```js
-Program         →   { Statement SEMICO } 
-Statement       →   OriginStatment | ScaleStatment
+Program         -->   { Statement SEMICO } 
+Statement       -->   OriginStatment | ScaleStatment
                     | RotStatment  | ForStatment   | ColorStatment
 ...
 
-ColorStatment   →   COLOR IS ColorExpression
-ColorExpression →   L_BRACKET Expression COMMA Expression COMMA Expression R_BRACKET
-                →   CONST_COL
+ColorStatment   -->   COLOR IS ColorExpression
+ColorExpression -->   L_BRACKET Expression COMMA Expression COMMA Expression R_BRACKET
+                -->   CONST_COL
 ...
 
 ```
