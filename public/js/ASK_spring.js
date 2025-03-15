@@ -168,6 +168,38 @@ class Spring {
             document.addEventListener("mousemove", onMouseMove);
             document.addEventListener("mouseup", onMouseUp);
         });
+        const onTouchMove = (event) => {
+            if (this.isDragging) {
+                const rect = this.canvas.getBoundingClientRect();
+                const touch = event.touches[0];
+                mouse_pos = { x: touch.clientX - rect.left - this.pos_x, y: touch.clientY - rect.top - this.pos_y };
+                const con_pos = v2p({ r: this.controlpoint.r + PI / 2, l: this.controlpoint.l });
+                const click_pos = { x: mouse_pos.x - con_pos.x, y: mouse_pos.y - con_pos.y };
+                const rotate_angle = p2v(click_pos).r - this.dragOffset.r;
+                const ratio = p2v(click_pos).l / this.dragOffset.l;
+                const last_endPoint = this.endPoint;
+                this.endPoint = { r: last_endPoint.r + rotate_angle, l: last_endPoint.l * ratio };
+                this.dragOffset = p2v(click_pos);
+            }
+        };
+        const onTouchEnd = () => {
+            this.isDragging = false;
+            document.removeEventListener("touchmove", onTouchMove);
+            document.removeEventListener("touchend", onTouchEnd);
+        };
+        this.pic.addEventListener("touchstart", (event) => {
+            this.isDragging = true;
+            const rect = this.canvas.getBoundingClientRect();
+            const touch = event.touches[0];
+            offsetX = touch.clientX - rect.left - this.pos_x;
+            offsetY = touch.clientY - rect.top - this.pos_y;
+            // 计算触摸开始时相对于图片的位置
+            const con_pos = v2p({ r: this.controlpoint.r + PI / 2, l: this.controlpoint.l });
+            const click_pos = { x: offsetX - con_pos.x, y: offsetY - con_pos.y };
+            this.dragOffset = p2v(click_pos);
+            document.addEventListener("touchmove", onTouchMove);
+            document.addEventListener("touchend", onTouchEnd);
+        });
     }
 }
 const spring = new Spring('springbox', 150, // 位置x轴
