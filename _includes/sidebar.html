@@ -5,7 +5,7 @@
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <img src="{{site.path}}/public/icon/ask.png">
+    <!-- <img src="{{site.path}}/public/icon/ask.png"> -->
     <p>{{ site.description }}</p>
   </div>
 
@@ -13,8 +13,8 @@
     <a class="sidebar-nav-item{% if page.title == 'Home' %} active{% endif %}" href="{{ '/' | absolute_url }}">Home</a>
 
     {% comment %}
-      The code below dynamically generates a sidebar nav of pages with
-      `layout: page` in the front-matter. See readme for usage.
+    The code below dynamically generates a sidebar nav of pages with
+    `layout: page` in the front-matter. See readme for usage.
     {% endcomment %}
 
     <!-- 无法自定义顺序，废弃 -->
@@ -40,12 +40,16 @@
     <a class="sidebar-nav-item" href="{{ site.author.url }}" target="_blank">My GitHubPage</a>
 
     <!-- menu -->
-    {% if page.layout == "post" %} 
+    {% if page.layout == "post" %}
     <style>
-      li.sidebar-nav-item {list-style-type:none;}
-      #toc .sidebar-nav-item {
-        font-size:xx-small;
+      li.sidebar-nav-item {
+        list-style-type: none;
       }
+
+      #toc .sidebar-nav-item {
+        font-size: xx-small;
+      }
+
       #toc {
         overflow: auto auto;
         max-height: 50vh;
@@ -56,17 +60,20 @@
     <a class="sidebar-nav-item">
       <div id="toc"></div>
       <script type="text/javascript">
-        $(document).ready(function() {
-          $('#toc').toc({ listType: 'ul' ,title:'<i>{{ page.title }}</i>',noBackToTopLinks: true,showEffect:'slideDown',headers: 'h2, h3, h4, h5, h6'});
+        $(document).ready(function () {
+          $('#toc').toc({ listType: 'ul', title: '<i>{{ page.title }}</i>', noBackToTopLinks: true, showEffect: 'slideDown', headers: 'h2, h3, h4, h5, h6' });
         });
       </script>
     </a>
     {% endif %}
-    </nav>
+  </nav>
   <div class="sidebar-item" id="copyright">
-      <p>
-        Current version {{ site.version }}<br>
-        &copy; {{ site.time | date: '%Y' }}. All rights reserved.
-      </p>
+    <p>
+      Current version {{ site.version }}<br>
+      &copy; {{ site.time | date: '%Y' }}. All rights reserved.
+    </p>
   </div>
+  {% if page.layout != "post" %}
+    {% include ASK_spring.html %}
+  {% endif %}
 </div>

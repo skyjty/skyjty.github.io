@@ -1,0 +1,40 @@
+<div class="springbox">
+  <div class="spring_bed">
+    <canvas id="spring_canvas"></canvas>
+    <div class="spring_pic"></div>
+  </div>
+</div>
+<script src="{{ site.path }}/public/js/ASK_spring.js"></script>
+<style>
+  .springbox {
+    width: 200px;
+    height: 400px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    transform-origin: 50% 100%;
+    pointer-events: none;
+  }
+
+  .springbox canvas {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+
+  .springbox .spring_pic {
+    position: absolute;
+    margin: 0 auto;
+    cursor: pointer;
+    pointer-events: auto;
+    transform-origin: center bottom;
+    background: no-repeat 50% 50%;
+    background-size: cover;
+    background-image: url({{site.path}}/public/image/ASK_edit.png);
+  }
+  .sidebar{
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+</style>
