@@ -5,7 +5,7 @@ date:   2025-01-13 14:48:00 +0800
 last_change_date: 2025-01-13 14:48:00 +0800
 categories: notes
 brief_introduction: Simple_drawing_interpreter说明文档
-tags: notes
+tags: 课设
 # related_posts: Welcome to Jekyll!
 ---
 
