@@ -7,7 +7,7 @@
   <title>
     {% if page.title == "Home" %}
     {{ site.title }} 
-    <!-- &middot; {{ site.version }} -->
+    {%comment%}&middot; {{ site.version }}{%endcomment%}
     {% else %}
     {{ page.title }} &middot; {{ site.title }}
     {% endif %}
