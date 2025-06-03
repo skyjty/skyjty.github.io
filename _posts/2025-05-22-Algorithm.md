@@ -938,81 +938,46 @@ def backtrack(path, choices):
 | NP    | 多项式时间内可验证 | ❌ 未知    | ✅ 是     | 背包、哈密顿路径      |
 | NP-完全 | 最难的 NP 问题 | ❌ 未知    | ✅ 是     | SAT、3-SAT、图着色 |
 
+### 各问题时间复杂度
+| 问题 | 时间复杂度 | 变量说明 |
+| ---- | --------- | -------- |
+| 冒泡排序 | $O(n^2)$（最坏/平均），$O(n)$（最好） | $n$ 为元素个数 |
+| 选择排序 | $O(n^2)$ | $n$ 为元素个数 |
+| 插入排序 | $O(n^2)$（最坏/平均），$O(n)$（最好） | $n$ 为元素个数 |
+| 快速排序 | $O(n\log n)$（平均），$O(n^2)$（最坏） | $n$ 为元素个数 |
+| 归并排序 | $O(n\log n)$ | $n$ 为元素个数 |
+| 堆排序 | $O(n\log n)$ | $n$ 为元素个数 |
+| 希尔排序 | $O(n\log n)\sim O(n^2)$ | $n$ 为元素个数，依增量序列 |
+| 计数排序 | $O(n+k)$ | $n$ 为元素个数，$k$ 为数值范围 |
+| 桶排序 | $O(n+k)$ | $n$ 为元素个数，$k$ 为桶数 |
+| 基数排序 | $O(nk)$ | $n$ 为元素个数，$k$ 为位数/关键字长度 |
+| 矩阵链乘 | $O(n^3)$ | $n$ 为矩阵个数 |
+| 最大子数组和 | $O(n)$（DP），$O(n\log n)$（分治） | $n$ 为数组长度 |
+| 装配线调度 | $O(n)$ | $n$ 为工位数 |
+| 0-1背包 | $O(nW)$ | $n$ 为物品数，$W$ 为背包容量 |
+| 最长公共子序列 | $O(mn)$ | $m,n$ 为两个字符串长度 |
+| 分数背包 | $O(n\log n)$ | $n$ 为物品数（排序） |
+| 活动选择 | $O(n\log n)$ | $n$ 为活动数（排序） |
+| Dijkstra | $O(V^2)$，堆优化 $O((V+E)\log V)$ | $V$ 为顶点数，$E$ 为边数 |
+| Bellman-Ford | $O(VE)$ | $V$ 为顶点数，$E$ 为边数 |
+| Floyd-Warshall | $O(V^3)$ | $V$ 为顶点数 |
+| 回溯（全排列） | $O(n!\,n)$ | $n$ 为元素个数 |
+| 回溯（N皇后） | $O(n!)$ | $n$ 为棋盘大小 |
+| NP完全问题（如子集和、旅行商） | $O(2^n)$ 或更高 | $n$ 为问题规模 |
 
-## 11 中英文对照表
+> 注：部分问题有多种算法实现，表中取常见最优复杂度。NP完全问题为指数级或更高，实际复杂度依具体问题和实现。
 
-| 英文                | 中文                   |
-|---------------------|------------------------|
-| Recursion           | 递归                   |
-| Divide and Conquer  | 分治                   |
-| Dynamic Programming | 动态规划               |
-| Greedy              | 贪心                   |
-| Substitution Method | 代入法                 |
-| Recursion Tree      | 递归树法               |
-| Master Theorem      | 主定理                 |
-| Bubble Sort         | 冒泡排序               |
-| Selection Sort      | 选择排序               |
-| Insertion Sort      | 插入排序               |
-| Quick Sort          | 快速排序               |
-| Merge Sort          | 归并排序               |
-| Heap Sort           | 堆排序                 |
-| Max Heap            | 大顶堆                 |
-| Min Heap            | 小顶堆                 |
-| Priority Queue      | 优先级队列             |
-| Matrix Chain Multiplication | 矩阵链乘      |
-| Maximum Subarray Sum| 最大子数组和           |
-| 0-1 Knapsack        | 0-1背包                |
-| Shortest Path       | 最短路径               |
-| Single Source Shortest Path | 单源最短路径  |
-| All-Pairs Shortest Path     | 任意两点最短路径|
-| Floyd-Warshall      | Floyd-Warshall算法     |
-| Kadane Algorithm    | Kadane算法             |
-| State Transition    | 状态转移               |
-| Stable Sort         | 稳定排序               |
-| Unstable Sort       | 不稳定排序             |
-| Conquer             | 治                     |
-| Merge               | 合并                   |1
-| Parent              | 父节点                 |
-| Child               | 子节点                 |
-| Pivot               | 基准值                 |
-| Partition           | 分区                   |
-| DP Table            | 动态规划表             |
-| State               | 状态                   |
-| Transition          | 转移                   |
-| Initialization      | 初始化                 |
-| Optimal Substructure| 最优子结构             |
-| Overlapping Subproblems | 重叠子问题         |
-| Greedy Choice       | 贪心选择               |
-| Feasible Solution   | 可行解                 |
-| Optimal Solution    | 最优解                 |
-| Path Reconstruction | 路径还原               |
-| Adjacency Matrix    | 邻接矩阵               |
-| Infinity            | 无穷大                 |
-| Step                | 步长                   |
-| Loop                | 循环                   |
-| Array               | 数组                   |
-| Index               | 下标                   |
-| Element             | 元素                   |
-| Subarray            | 子数组                 |
-| Subproblem          | 子问题                 |
-| Bracket             | 括号                   |
-| Scalar Multiplication| 标量乘法              |
-| Combination         | 组合                   |
-| Permutation         | 排列                   |
-| Constraint          | 约束                   |
-| Solution            | 解                     |
-| Complexity          | 复杂度                 |
-| Minimum             | 最小值                 |
-| Maximum             | 最大值                 |
-| Sum                 | 求和                   |
-| Product             | 乘积                   |
-| Assignment          | 赋值                   |
-| Comparison          | 比较                   |
-| Condition           | 条件                   |
-| Recurrence          | 递推                   |
-| Initialization      | 初始化                 |
-| Update              | 更新                   |
-| Return              | 返回                   |
+| 变量 | 说明 |
+| ---- | ---- |
+| $n$ | 元素/数据规模 |
+| $k$ | 关键字长度/桶数/数值范围 |
+| $m$ | 字符串长度 |
+| $V$ | 顶点数 |
+| $E$ | 边数 |
+| $W$ | 背包容量 |
+
+
+## 12 中英文对照表
 
 
 |英文|中文|
