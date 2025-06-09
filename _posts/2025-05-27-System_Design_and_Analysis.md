@@ -95,9 +95,21 @@ FAST - **F**ramework for the **A**pplication of **S**ystems **T**echniques
 ### Alternative Routes through a Methodology
 
 - Model-Driven Development (MDD)（模型驱动开发）
+  - Structured systems analysis and design — process-centered
+  - Information engineering (IE) — data-centered, process-sensitive
+  - Object-oriented analysis and design (OOAD) — object-centered 
+(integration of data and process concerns)
 - Rapid Application Development (RAD)（快速原型开发）
 - Commercial Off-the-Shelf Software (COTS) （购置商业软件）
 - Maintenance and Reengineering（维护与再工程）or hybrids of the above
+
+| 方法                                          | 对象 / 适用场景                                   |
+| ------------------------------------------- | ------------------------------------------- |
+| **MDD（Model-Driven Development）**           | 强调**通过模型生成代码**，适用于自动化生成系统结构和逻辑              |
+| **RAD（Rapid Application Development）**      | 快速构建**用户原型 + 迭代反馈**，适合需求变动快的场景              |
+| **COTS（Commercial Off-the-Shelf Software）** | **购买现成软件**并进行定制或集成，适合通用功能系统                 |
+| **Maintenance & Reengineering**             | 面向**已有系统的维护、优化或重构**                         |
+| **Hybrids（混合方法）**                           | 综合多种方法，例如 RAD + FAST，或 COTS + Reengineering |
 
 ### 开发环境
 CASE - 电脑环境
@@ -118,6 +130,11 @@ Project Management Functions
  - Controlling  控制项目开发过程
  - Closing      总结经验和教训
 
+### Project/Process management
+- Project management is the process of scoping, planning, staffing, organizing, directing, and controlling the development of an acceptable system at a minimum cost within a specified time 
+frame. 
+- Process management is an ongoing activity that documents, manages the use of, and improves an organization’s chosen methodology (the “process”) for system development. Process management is concerned with the activities, deliverables, and quality standards to be applied to all projects.
+
 ### gantt & pert
 
 ![图一]({{site.path}}/public/image/2025-05-27-System_Design_and_Analysis/gantt图.png "gantt图")
@@ -125,6 +142,128 @@ Project Management Functions
 ![图二]({{site.path}}/public/image/2025-05-27-System_Design_and_Analysis/PERT图.png "PERT图")
 
 ## CH5
+
+一类是 **Model-Driven Analysis Approaches（模型驱动的分析方法）**
+
+—— 以构建**可视化模型**为核心，系统化、逻辑化地分析需求与结构
+
+一类是 **Accelerated Analysis Approaches（加速分析方法）**
+
+—— 更注重**速度、原型反馈和快速决策**，适用于需求不稳定或节奏快的项目
+
+### 一、Model-Driven Analysis Approaches（模型驱动分析）
+
+####  1. **Structured Analysis（结构化分析）**
+
+##### 📖 概述：
+
+* 使用**数据流图（DFD）**、\*\*实体关系图（ER 图）\*\*等工具
+* 强调功能分解（功能驱动）
+
+##### ✅ 优点：
+
+* 层次清晰，适合大型系统
+* 强调系统的数据与处理流程
+* 模型文档化程度高，便于沟通和维护
+
+##### ❌ 缺点：
+
+* 不适合快速变动需求
+* 忽略对象行为与状态
+* 不具备现代系统的面向服务特征
+
+#### 2. **Information Engineering（信息工程）**
+
+##### 📖 概述：
+
+* 强调**数据驱动分析**，先分析数据，再建功能模型
+* 常用工具：ER 图、数据字典、数据结构图
+
+##### ✅ 优点：
+
+* 数据模型设计严谨，有利于数据库设计
+* 适合数据密集型系统（如ERP、MIS）
+
+##### ❌ 缺点：
+
+* 对功能建模关注不够
+* 不支持对象行为或复杂交互
+* 通常较重、文档繁琐
+
+#### 3. **Object-Oriented Analysis（面向对象分析）**
+
+##### 📖 概述：
+
+* 基于对象、类、继承、封装等 OOP 思维
+* 使用**UML 图**（类图、顺序图、用例图等）
+* 可直接过渡到设计/实现阶段
+
+##### ✅ 优点：
+
+* 分析模型可复用到设计阶段
+* 更贴合现实世界建模
+* 支持封装、继承、抽象、复用
+
+##### ❌ 缺点：
+
+* 初学者理解成本较高
+* 分析过程抽象，不易形成具体流程视图
+* 依赖强的团队协作建模规范
+
+
+### ✅ 二、Accelerated Analysis Approaches（加速分析）
+
+#### 1. **Discovery Prototyping（发现性原型法）**
+
+##### 📖 概述：
+
+* 先构建**界面原型或部分功能系统**
+* 用户反馈推动需求澄清和迭代
+* 一般结合 RAD 或敏捷流程使用
+
+##### ✅ 优点：
+
+* 快速获得用户反馈
+* 降低需求不明确的风险
+* 用户参与感强
+
+##### ❌ 缺点：
+
+* 容易变成“盲目构建”而非“系统建模”
+* 结构和流程完整性弱
+* 需要专业原型工具/开发人员支持
+
+#### 2. **Rapid Architecture Analysis（快速架构分析）**
+
+##### 📖 概述：
+
+* 快速搭建系统架构蓝图（组件、服务、接口）
+* 用于评估可行性、性能、集成点
+* 通常与 DevOps、微服务、云架构结合使用
+
+##### ✅ 优点：
+
+* 快速验证技术架构适配性
+* 节省时间、支持演进式开发
+* 避免后期架构返工
+
+##### ❌ 缺点：
+
+* 不深入业务需求细节
+* 对技术预设和架构经验要求高
+* 易忽略边界条件和异常处理
+
+### 比较
+
+| 方法类型 | 方法名称                        | 适用场景         | 优点             | 缺点           |
+| ---- | --------------------------- | ------------ | -------------- | ------------ |
+| 模型驱动 | Structured Analysis         | 功能清晰、流程稳定的系统 | 层次分明、数据流建模严谨   | 忽视对象行为，难适应变化 |
+| 模型驱动 | Information Engineering     | 数据密集型业务系统    | 强调数据模型、便于DB设计  | 功能建模弱，灵活性低   |
+| 模型驱动 | Object-Oriented Analysis    | 面向对象的现代系统    | 可过渡至设计/实现，高复用性 | 模型抽象，初学者门槛高  |
+| 加速分析 | Discovery Prototyping       | 需求不清、快速试错项目  | 快速迭代、用户反馈好     | 模型弱，结构性差     |
+| 加速分析 | Rapid Architecture Analysis | 微服务、技术可行性评估  | 快速设计架构、发现风险    | 忽略细节，非业务导向   |
+
+### 系统分析阶段
 
 | 阶段编号    | 阶段名称（英文）                  | 阶段名称（中文）     | 系统相关角色参与情况                                                         |
 | ------- | ------------------------- | ------------ | ------------------------------------------------------------------ |
@@ -461,15 +600,174 @@ E-R -> 数据库Schema
 
 ## Ch13 Ch14 Ch15
 
-三种输出
-输出设计
+### 一、输入设计（Input Design）
 
-输入输出 GUI
-设计的原则是什么
+#### 1. 输入设计核心原则：
 
-GUI人机工程学
+* **Garbage in, garbage out**：输入数据质量决定输出质量。
+* 输入设计关注两个方面：
 
-页面状态迁移图
+  * 数据是如何被采集、输入和处理的。
+  * 所使用的方法和技术。
+
+#### 2. 数据采集与处理方式：
+
+* **Data Capture**：源数据的识别与采集（源文件）。
+* **Data Entry**：将源数据转换为机器可读格式。
+* **Data Processing**：
+
+  * 批处理（Batch）
+  * 在线处理（On-line）
+  * 远程批处理（Remote batch）
+
+#### 3. 输入实现技术：
+
+* 键盘、鼠标、触屏、语音、POS终端
+* 自动数据采集技术：
+
+  * OMR、条码、OCR、MICR
+  * 智能卡、指纹/虹膜等生物识别
+
+#### 4. 输入设计建议：
+
+* 只采集**可变数据**，常量用程序维护。
+* 使用业务代码（例如：性别=“M/F”而不是“男/女”）。
+
+#### 5. 表单设计原则：
+
+* 包含填写说明
+* 减少手写部分
+* 输入数据应从上到下、从左到右
+
+---
+
+### 二、输入内部控制（Input Validation & Internal Controls）
+
+#### 常见输入验证方法：
+
+| 验证类型            | 功能描述                 |
+| --------------- | -------------------- |
+| Existence Check | 检查所有必填字段是否填写         |
+| Type Check      | 检查输入的数据类型是否匹配        |
+| Domain Check    | 检查值是否在允许范围内          |
+| Combination     | 检查两个字段之间的逻辑关系        |
+| Self-checking   | 主键的校验位逻辑（如身份证号）      |
+| Format Check    | 格式匹配（如日期 yyyy-mm-dd） |
+
+#### 控制措施：
+
+* 批处理系统：控制单、一一核对
+* 在线系统：记录日志、生成确认编号
+
+---
+
+### 三、输出设计（Output Design）
+
+#### 1. 输出类型分类：
+
+| 类型   | 用途        | 接收者         |
+| ---- | --------- | ----------- |
+| 内部输出 | 给组织内部使用   | 用户、管理者      |
+| 外部输出 | 发给外部机构或客户 | 客户、合作伙伴、政府等 |
+| 回转输出 | 外部输出后重新输入 | 发票、账单附带回执部分 |
+
+#### 2. 内部输出：
+
+* **详细报告（Detailed）**：原始信息，无过滤。
+* **汇总报告（Summary）**：用于决策支持。
+* **异常报告（Exception）**：只呈现偏离/错误项。
+
+#### 3. 输出呈现方式：
+
+* **表格输出（Tabular）**
+* **图形输出（Charts）**：
+
+  * 折线图、面积图、条形图、柱状图
+  * 饼图、环图、雷达图、散点图
+
+#### 4. 输出设计建议：
+
+* 明确标题、时间戳、字段标签
+* 信息应可导航、无需人工处理
+* 避免术语，适配用户使用习惯
+
+---
+
+### 四、用户界面设计（User Interface）
+
+#### 1. 用户类型：
+
+* **专家用户（Expert User）**：频繁使用，如主机时代的专用用户。
+* **新手用户（Novice / Casual User）**：偶尔使用，需更多引导。
+
+#### 2. 界面常见问题（Galitz总结）：
+
+* 术语过多
+* 非直观设计
+* 操作歧义
+* 问题解决方式不一致
+
+#### 3. 用户界面设计原则：
+
+* 了解用户与任务，**用户参与设计**，**持续迭代优化**
+* 使用自然语言，避免术语
+* 所有信息/指令放置统一区域
+* 明确提示：输入成功/失败、任务完成等
+
+---
+
+### 五、安全性与帮助系统
+
+#### 1. 安全控制：
+
+* **身份验证（Authentication）**
+* **权限授权（Authorization）**
+* 示例：登录界面、认证失败提示、服务器证书
+
+#### 2. 帮助系统：
+
+* Tool Tip
+* Help Wizard（向导）包含：说明、解释、后续操作建议
+
+---
+
+### 六、用户界面技术（GUI）
+
+#### 1. 当前主流UI形式：
+
+* **图形用户界面（GUI）**
+* 客户端：运行于操作系统
+* Web端：运行于浏览器
+
+#### 2. 显示方式：
+
+* 分页显示（如翻页）
+* 滚动显示（如电影字幕）
+
+#### 3. GUI设计策略：
+
+* 窗口与框架
+* **菜单式界面**（下拉、弹出、工具栏、超链接）
+* **指令驱动式界面**（适合专家用户）：
+
+  * 编程语言语法（如SQL）
+  * 助记语法
+  * 自然语言交互
+
+#### 4. 问答式对话界面：
+
+* 用于补充菜单式或指令式对话
+* 需考虑所有正确答案与容错
+
+---
+
+### 七、用户界面设计过程
+
+1. **绘制用户界面对话图**
+2. **构建界面原型**
+3. **获取用户反馈**
+4. **必要时回滚优化设计**
+
 
 ## Module A
 “**OOA**” 和 “**OOD**” 是软件工程中两个密切相关但阶段不同的概念，分别代表：
