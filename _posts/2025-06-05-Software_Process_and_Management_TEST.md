@@ -48,63 +48,103 @@ Write "T" if the statement is true and "F" if it is false.
 Choose the most appropriate answer.
 
 21. Which of the following is NOT a feature of agile project management?
+    
     A. Incremental releases
+
     B. Adaptability
+
     C. Fixed scope throughout project
+
     D. Flexibility
 
 22. What does the acronym INVEST stand for in agile?
+    
     A. Independent, Necessary, Valuable, Easy, Small, Testable
+
     B. Independent, Negotiable, Valuable, Estimable, Small, Testable
+
     C. Integrated, Negotiable, Visionary, Essential, Small, Testable
+
     D. Inclusive, Necessary, Valuable, Estimable, Secure, Timely
 
 23. Which of these is used to prioritize project requirements?
+    
     A. SWOT analysis
+
     B. Gantt Chart
+
     C. MoSCoW method
+
     D. RACI matrix
 
 24. What does EAC stand for in project performance tracking?
+    
     A. Estimated Actual Cost
+
     B. Earned Actual Cost
+    
     C. Estimate at Completion
+    
     D. End Allocation Chart
 
 25. Which scheduling technique adds buffers and considers resource constraints?
+    
     A. Gantt Scheduling
+    
     B. PERT
+    
     C. Fast Tracking
+    
     D. Critical Chain Scheduling
 
 26. What is a RACI chart used for?
+    
     A. Resource allocation
+    
     B. Risk tracking
+    
     C. Defining roles and responsibilities
+    
     D. Document storage
 
 27. Which of the following best defines a user story?
+    
     A. A line of code
+    
     B. A customer feedback survey
+    
     C. A short, simple description of a feature told from the perspective of the user
+    
     D. A list of product defects
 
 28. What tool helps identify the root causes of quality problems?
+    
     A. Gantt chart
+    
     B. Fishbone diagram
+    
     C. Kanban board
+    
     D. SWOT matrix
 
 29. What is NOT included in a project scope statement?
+    
     A. Deliverables
+    
     B. Detailed cost estimates
+    
     C. Project objectives
+    
     D. Constraints
 
 30. Which of the following tools visualizes workflow stages in Agile?
+    
     A. Burn-up chart
+    
     B. Control chart
+    
     C. Kanban board
+    
     D. Ishikawa diagram
 
 ---
