@@ -13,93 +13,103 @@ tags: notes
 
 ### Chapter1:
 
--  A megaproject is defined as one that costs over $1 billion and affects more than 1 million people.
-    - 巨型项目是指成本超过10亿美元并影响超过100万人口的项目。
+-  A **megaproject** is defined as one that costs over $1 billion and affects more than 1 million people.
+    - **巨型项目**是指成本超过10亿美元并影响超过100万人口的项目。
 -  Scrum is an adaptive project management framework used in agile methodologies.
     - Scrum 是一种用于敏捷方法的适应性项目管理框架。
 -  A program manager leads and coordinates multiple related projects.
     - 项目经理负责领导和协调多个相关项目。
--  Agile project management is known for its flexibility, incremental releases, and adaptability to change.
-    - 敏捷项目管理以灵活性、渐进式发布和适应变化而著称。
--  Agile assumes that changes will occur during the project lifecycle.
-    - 敏捷假设项目生命周期中会发生变化。
--  Predictive project management relies on detailed upfront planning and delivers the final product at the end.
+-  Agile project management is known for its **flexibility**, **incremental releases**, and **adaptability to change**.
+    - 敏捷项目管理以**灵活性**、**渐进式发布**和**适应变化**而著称。
+-  Agile assumes that changes will occur **during the project lifecycle**.
+    - 敏捷假设项目**生命周期中**会发生变化。
+-  Predictive project management relies on **detailed upfront planning** and delivers the final product at the end.
     - 预测型项目管理依赖于前期详细规划，并在项目结束时交付最终成果。
 -  A hybrid approach combines predictive and agile project management methods.
     - 混合方法结合了预测型和敏捷项目管理方法。
--  Tools like Gantt charts and network diagrams are used for effective schedule management.
-    - 甘特图和网络图等工具用于高效的进度管理。
--  An artifact in project management refers to a document, template, output, or deliverable.
-    - 在项目管理中，artifact 指的是文档、模板、产出或交付物。
--  The triple constraint involves balancing scope, schedule, and cost.
-    - 三重约束涉及在范围、进度和成本之间进行平衡。
--  The Net Promoter Score (NPS) measures how likely a customer is to recommend a product or service.
-    - 净推荐值（NPS）衡量客户推荐产品或服务的可能性。
+-  Tools like **Gantt charts** and **network diagrams** are used for effective schedule management.
+    - **甘特**图和**网络图**等工具用于高效的进度管理。
+-  An **artifact** in project management refers to a document, template, output, or deliverable.
+    - 在项目管理中，**artifact** 指的是文档、模板、产出或交付物。
+-  The **triple constraint** involves balancing scope, schedule, and cost.
+    - **三重约束**涉及在范围、进度和成本之间进行平衡。
+-  The **Net Promoter Score (NPS)** measures how likely a customer is to recommend a product or service.
+    - **净推荐值（NPS）**衡量客户推荐产品或服务的可能性。
 
 ### Chapter 2:
 
 1.	NPV (Net Present Value) analysis determines the expected net gain or loss from a project in today’s monetary value.
     - 净现值（NPV）分析用于确定项目在当前货币价值下的预期净收益或损失。
-2.	Mind mapping is a visual technique where ideas branch out from a central theme.
+2.	**Mind mapping** is a visual technique where ideas branch out from a central theme.
     - 思维导图是一种从中心主题发散出想法的可视化技术。
-3.	Lean methodology emphasizes eliminating waste and optimizing value.
-    - 精益方法强调消除浪费并优化价值。
-4.	A product roadmap is a document that outlines the strategic direction of a product over time.
+3.	**Lean methodology** emphasizes eliminating waste and optimizing value.
+    - **精益方法**强调消除浪费并优化价值。
+4.	A **product roadmap** is a document that outlines the strategic direction of a product over time.
     - 产品路线图是概述产品战略方向的文件。
 5.	The payback period is **not** used to measure overall project profitability over time.
     - 回收期不是用于衡量项目长期盈利能力的方法。
+      - 回收期（Payback Period）只衡量收回初始投资所需的时间，并不考虑项目在回本之后的利润，也不考虑资金的时间价值。
 6.	Cash flow is calculated by subtracting expenses from income.
     - 现金流是收入减去支出的结果。
 7.	Lean methodology does **not** focus on increasing employee count to boost productivity.
     - 精益方法不强调通过增加员工数量来提高生产力。
-8.	SWOT analysis assesses both internal and external business factors.
-    - SWOT 分析评估企业的内部和外部因素。
-9.	Strategic planning helps organizations set long-term goals and strategies.
-    - 战略规划帮助组织制定长期目标和战略。
-10.	The discount rate is used to convert future cash flows to present value.
-    - 折现率用于将未来现金流转换为现值。
+      - 精益方法论（Lean methodology）的核心是消除浪费、提高效率、最大化客户价值的交付，而不是通过增加员工数量来提升生产力。
+8.	SWOT analysis assesses **both internal and external** business factors.
+    - SWOT 分析评估企业的**内部和外部**因素。
+9.	Strategic planning helps organizations set **long-term** goals and strategies.
+    - 战略规划帮助组织制定**长期**目标和战略。
+10.	The **discount rate** is used to convert future cash flows to present value.
+    - **折现率**用于将未来现金流转换为现值。
 11.	SWOT analysis is used to evaluate strengths, weaknesses, opportunities, and threats.
     - SWOT 分析用于评估优势、劣势、机会和威胁。
-12.	A product roadmap visually summarizes the long-term direction of a product.
+12.	A **product roadmap** visually summarizes the long-term direction of a product.
     - 产品路线图是对产品长期方向的可视化总结。
 
 ### Chapter 3:
 
--  The project charter provides formal recognition of a project and outlines its objectives.
+-  The **project charter** provides formal recognition of a project and outlines its objectives.
     - 项目章程正式确认项目的存在并概述其目标。
--  In Scrum, the Product Owner is responsible for maximizing product value through backlog management.
+-  In Scrum, the Product Owner is responsible for maximizing product value through **backlog management**.
     - 在 Scrum 中，产品负责人通过待办列表管理最大化产品价值。
 -  The Champion role is **not** part of the official Scrum roles.
     - “冠军”不是 Scrum 官方角色之一。
+      - Scrum 三大官方角色 
+
+| 角色名称            | 英文名                   | 职责简述                                                      |
+| --------------- | --------------------- | --------------------------------------------------------- |
+| **产品负责人**       | **Product Owner（PO）** | 代表客户利益，负责产品待办列表（Product Backlog）的管理与优先级排序，确保团队开发出最具价值的功能。 |
+| **Scrum 主管/教练** | **Scrum Master**      | 保证 Scrum 过程被正确实践，移除团队障碍，促进团队自组织和持续改进，是团队的教练与护航者。          |
+| **开发团队成员**      | **Development Team**  | 跨职能、能自主完成工作的成员群体，包括程序员、测试、设计师等，负责每个 Sprint 内完成“可交付的产品增量”。 |
+
 -  The Scrum Master is **not** responsible for enforcing the product vision.
     - Scrum Master 不负责执行产品愿景。
 -  A user story does **not** represent a technical requirement; it reflects user needs and value.
     - 用户故事不是技术需求，而是反映用户需求和价值。
--  A sprint usually lasts 1 to 4 weeks in agile development, **not** one to three months.
+-  A sprint usually lasts **1 to 4 weeks** in agile development, **not** one to three months.
     - 在敏捷开发中，一个冲刺通常持续1到4周，而不是1到3个月。
 -  A phase is a distinct stage in a project’s life cycle.
     - 阶段是项目生命周期中的一个明确阶段。
--  The iterative approach gathers feedback after each cycle to guide future development.
+-  The iterative approach gathers feedback **after each cycle** to guide future development.
     - 迭代方法在每个周期后收集反馈，以指导未来开发。
--  The development team delivers a potentially releasable product increment at the end of each sprint.
-    - 开发团队在每个冲刺结束时交付一个可发布的产品增量。
+-  The development team delivers a potentially releasable product increment **at the end of each sprint**.
+    - 开发团队在**每个冲刺结束时**交付一个可发布的产品增量。
 
 ### Chapter:4
 
 -  The Requirements Management Plan explains how project requirements will be collected, tracked, and managed.
     - 需求管理计划说明如何收集、跟踪和管理项目需求。
--  INVEST stands for Independent, Negotiable, Valuable, Estimable, Small, and Testable — key qualities of a good user story.
+-  **INVEST** stands for Independent, Negotiable, Valuable, Estimable, Small, and Testable — key qualities of a good user story.
     - INVEST 代表：独立（Independent）、可协商（Negotiable）、有价值（Valuable）、可估算（Estimable）、小型（Small）、可测试（Testable）——是优秀用户故事的关键特征。
--  The MoSCoW method is used to prioritize project requirements based on importance.
-    - MoSCoW 方法用于根据重要性对项目需求进行优先级排序。
--  An epic in agile is a large user story that can be broken down into smaller stories for execution.
+-  The **MoSCoW method** is used to prioritize project requirements based on importance.
+    - **MoSCoW 方法**用于根据重要性对项目需求进行优先级排序。
+-  An **epic** in agile is a large user story that can be broken down into smaller stories for execution.
     - 在敏捷开发中，epic 是一个可以拆分为多个小型用户故事的大型故事。
 -  A requirements traceability matrix (RTM) tracks each requirement and its attributes throughout the project lifecycle.
     - 需求可追溯矩阵（RTM）在整个项目生命周期中跟踪每个需求及其属性。
 -  An epic is too large to complete in a single iteration and should be split into smaller stories.
     - Epic 太大，无法在一个迭代中完成，应拆分为更小的用户故事。
--  A work package is the smallest deliverable in a Work Breakdown Structure, assigned to an individual.
-    - 工作包是工作分解结构（WBS）中分配给个人的最小交付成果。
+-  A work package is the smallest deliverable in a Work Breakdown Structure, **assigned to an individual**.
+    - 工作包是工作分解结构（WBS）中**分配给个人**的最小交付成果。
 -  All requirements must be testable and traceable to a clear business need.
     - 所有需求都必须可测试，并且可追溯到明确的业务需求。
 -  Backlog refinement is a continuous process, **not** a one-time event at the start of the project.
@@ -111,25 +121,25 @@ tags: notes
 
 1.	Critical Chain Scheduling considers resource constraints and adds buffers to protect the project end date.
     - 关键链调度法考虑资源限制，并添加缓冲时间以保障项目完工日期。
-2.	Planning Poker is an Agile estimation technique using numbered playing cards to estimate story size.
+2.	**Planning Poker** is an Agile estimation technique using numbered playing cards to estimate story size.
     - 规划扑克是一种敏捷估算技术，使用编号纸牌来评估用户故事的大小。
 3.	A Kanban board typically has columns such as “To Do,” “In Progress,” and “Done.”
     - 看板通常分为“待办事项”、“进行中”和“已完成”等列。
 4.	PERT is **not** ideal when activity durations are highly predictable.
     - 当活动持续时间高度可预测时，PERT 技术并不适用。
-5.	The Theory of Constraints states that most systems are limited by one key constraint.
-    - 制约理论认为，大多数系统都受到一个主要瓶颈的限制。
+5.	The Theory of Constraints states that most systems are limited by **one key constraint**.
+    - 制约理论认为，大多数系统都受到**一个主要瓶颈**的限制。
 6.	The critical path is the longest sequence of activities that determines the earliest project completion date.
     - 关键路径是项目中持续时间最长的一系列活动，决定了项目最早完成的日期。
-7.	A timebox is a fixed, short period in Agile where teams work to complete specific goals.
-    - 时间盒是在敏捷开发中用于完成特定目标的固定短周期。
-8.	Fast tracking is a schedule compression technique where activities are performed in parallel.
-    - 快速跟踪是一种进度压缩技术，通过并行执行活动以缩短工期。
+7.	A **timebox** is a fixed, short period in Agile where teams work to complete specific goals.
+    - **时间盒**是在敏捷开发中用于完成特定目标的固定短周期。
+8.	**Fast tracking** is a schedule compression technique where activities are performed in parallel.
+    - **快速跟踪**是一种进度压缩技术，通过并行执行活动以缩短工期。
 
 ### Chapter:6
 
--  A RACI chart defines team roles in terms of responsibility and accountability.
-    - RACI 图用于明确团队成员在任务中的责任与问责角色。
+-  A **RACI chart** defines team roles in terms of responsibility and accountability.
+    - **RACI 图**用于明确团队成员在任务中的责任与问责角色。
 -  The Definition of Done outlines the criteria that must be met for a product increment to be considered complete.
     - 完成的定义指明产品增量被认为完成所必须满足的标准。
 -  A Procurement Statement of Work (SOW) clearly describes what is being purchased.
@@ -138,9 +148,9 @@ tags: notes
     - 团队章程有助于设定期望并明确成员之间的协作方式。
 -  A fallback plan is **not** implemented when risk responses are successful; it’s used if the primary response fails.
     - 当主要风险应对措施失败时，才会实施后备计划，而不是在成功时实施。
--  Fitness for use requires a product to be both technically correct and suitable for its intended purpose.
-    - “适用性”不仅要求产品符合技术规格，还必须适合其预期用途。
--  Make-or-buy analysis compares the internal cost of development with external outsourcing options.
+-  Fitness for use requires a product to be both technically correct and suitable for its **intended purpose**.
+    - “适用性”不仅要求产品符合技术规格，还必须适合其**预期用途**。
+-  **Make-or-buy analysis** compares the internal cost of development with external outsourcing options.
     - 自制或外购分析用于比较内部开发成本与外部外包选项。
 -  An information radiator is a visible display that shows real-time progress of a project.
     - 信息辐射器是一个可视化展示项目实时进展的显示板。
@@ -153,26 +163,26 @@ tags: notes
     - 因果图（又称鱼骨图或石川图）有助于识别质量问题的根本原因。
 2.	The collaborating conflict-handling mode combines high assertiveness and high cooperativeness to find win-win solutions.
     - 协作型冲突处理方式结合高度的自信与合作，寻求双赢解决方案。
-3.	A quality audit is used to review quality activities and identify areas for improvement.
-    - 质量审计用于审查质量相关活动并找出改进空间。
-4.	The Tuckman model describes stages of team development: forming, storming, norming, performing, and adjourning.
-    - 塔克曼模型描述了团队发展的阶段：形成、风暴、规范、执行与解散。
+3.	A quality audit is used to review quality activities and identify areas for **improvement**.
+    - 质量审计用于审查质量相关活动并找出**改进空间**。
+4.	The **Tuckman model** describes stages of team development: forming, storming, norming, performing, and adjourning.
+    - **塔克曼模型**描述了团队发展的阶段：形成、风暴、规范、执行与解散。
 5.	Benchmarking does **not** compare team members for salary gaps; it compares performance or processes against best practices.
     - 基准分析不是用于比较员工工资差异，而是将绩效或流程与最佳实践进行比较。
-6.	Empathic listening involves understanding others by putting yourself in their position.
-    - 移情式倾听是通过将自己置于对方立场来理解他人。
-7.	The competing conflict-handling style is assertive but **not** cooperative.
-    - 竞争型冲突处理方式具有攻击性但缺乏合作性。
-8.	Explicit knowledge is easy to articulate and share, such as in documents or procedures.
-    - 显性知识易于表达与分享，例如通过文档或流程。
+6.	**Empathic listening** involves understanding others by putting yourself in their position.
+    - **移情式倾听**是通过将自己置于对方立场来理解他人。
+7.	The **competing conflict-handling style** is assertive but **not** cooperative.
+    - **竞争型冲突处理方式**具有攻击性但缺乏合作性。
+8.	**Explicit knowledge** is easy to articulate and share, such as in documents or procedures.
+    - **显性知识**易于表达与分享，例如通过文档或流程。
 9.	Mirroring is a technique where one subtly matches another’s body language or tone to build connection.
     - 镜像是一种通过模仿他人的肢体语言或语调来建立联系的技巧。
-10.	An issue log is used to track and manage issues that require resolution throughout the project.
-    - 问题日志用于跟踪和管理项目中需要解决的问题。
-11.	Rapport is a harmonious relationship built on mutual understanding and trust.
-    - 融洽关系是基于相互理解与信任建立的和谐关系。
-12.	Synergy refers to the combined effort of a team producing results greater than the sum of individual contributions.
-    - 协同作用指的是团队合作所产生的效果大于个人贡献之和。
+10.	An **issue log** is used to track and manage issues that require resolution throughout the project.
+    - **问题日志**用于跟踪和管理项目中需要解决的问题。
+11.	**Rapport** is a harmonious relationship built on mutual understanding and trust.
+    - **融洽关系**是基于相互理解与信任建立的和谐关系。
+12.	**Synergy** refers to the combined effort of a team producing results greater than the sum of individual contributions.
+    - **协同作用**指的是团队合作所产生的效果大于个人贡献之和。
  
 ### Chapter:8
 
@@ -184,12 +194,12 @@ tags: notes
     - 完工估算（EAC）用于预测项目的总预期成本。
 -  Actual Cost (AC) is the real cost incurred for the work completed, **not** the planned cost.
     - 实际成本（AC）是已完成工作的真实支出，而非计划成本。
--  Stratification is a technique for analyzing data by dividing it into separate categories to reveal patterns.
-    - 分层法是一种通过将数据分为不同类别以分析其模式的技术。
+-  **Stratification** is a technique for analyzing data by dividing it into separate categories to reveal patterns.
+    - **分层法**是一种通过将数据分为不同类别以分析其模式的技术。
 -  Workarounds are **not** proactive risk responses—they are unplanned solutions to unexpected problems.
     - 应急措施不是主动的风险应对措施，而是对突发问题的临时解决方案。
--  Earned value is the measure of completed work expressed in terms of the approved budget.
-    - 挣值是用预算金额来表示已完成工作的度量标准。
+-  **Earned value** is the measure of completed work expressed in terms of the approved budget.
+    - **挣值**是用预算金额来表示已完成工作的度量标准。
 -  Resiliency is the ability to recover quickly from difficulties or project setbacks.
     - 韧性是指从困难或项目挫折中快速恢复的能力。
 -  Integrated change control is the process of managing changes to scope, time, and cost in a coordinated way.
@@ -201,8 +211,8 @@ tags: notes
 
 ### Chapter:9
 
-1.	The main goal of knowledge transfer in project management is to communicate knowledge across individuals or departments.
-    - 项目管理中知识转移的主要目标是促进个人或部门之间的信息共享。
+1.	The main goal of knowledge transfer in project management is to **communicate knowledge** across individuals or departments.
+    - 项目管理中知识转移的主要目标是促进个人或部门之间的**信息共享**。
 2.	A post-mortem is **not** a project initiation meeting; it is conducted after the project ends.
     - 事后总结会议不是项目启动会议，而是在项目结束后举行的。
 3.	A post-mortem is a meeting held at the end of a project to review what went well, what didn’t, and how to improve future projects.
