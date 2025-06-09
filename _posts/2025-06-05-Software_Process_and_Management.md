@@ -299,7 +299,7 @@ $$
 > 📌 **代入计算：**
 
 $$
-EV = \$100,000 × 40\% = \$40,000
+EV = 100,000 × 40\% = 40,000
 $$
 
 ✅ **答：** 挣值 EV = **\$40,000**
@@ -409,42 +409,74 @@ Support your answer with specific tools (e.g., burndown chart, definition of don
 5. 随着时间的推移提高团队绩效和利益相关者协作
 使用特定工具（例如，燃尽图、完成定义、积压工作细化）和类似敏捷项目中的实际实践来支持您的答案。
 
-🔹 1. Scrum Roles and Responsibilities
--	Product Owner (PO): Owns the Product Backlog, prioritizes features such as live tracking, payment gateway integration, and restaurant onboarding.
--	Scrum Master: Facilitates Scrum ceremonies, removes blockers, shields team from distractions, and coaches on agile best practices.
--	Development Team: Cross-functional members who design, build, test, and deliver a potentially shippable product increment each sprint.
-Application: I would clarify each role during kickoff and revisit responsibilities in retrospectives when confusion arises.
-________________________________________
-🔹 2. Managing and Prioritizing the Product Backlog
-The Product Backlog is dynamic and should reflect evolving priorities.
--	I would schedule regular backlog refinement sessions (at least once per sprint).
--	Use techniques like MoSCoW or Weighted Shortest Job First (WSJF) to help the PO prioritize.
--	Ensure backlog items are broken down into INVEST-compliant user stories (Independent, Negotiable, Valuable, Estimable, Small, Testable).
-Example: "As a user, I want to track my order live so I can know when to be ready."
-________________________________________
-🔹 3. Facilitating Scrum Ceremonies
--	Sprint Planning:
-Team selects backlog items and defines the Sprint Goal. I’d ensure only refined items are selected to prevent confusion during development.
--	Daily Scrum:
-15-minute stand-up where team members discuss progress, plans, and blockers. As Scrum Master, I’d coach the team to keep it focused.
--	Sprint Review:
-Stakeholders review the increment. I’d help the team present demos that align with the sprint goal.
--	Sprint Retrospective:
-Discuss what went well, what didn’t, and actionable improvements. I’d encourage psychological safety for open feedback.
-Example: After a sprint with delayed testing, we might agree to shift one developer to pair with QA mid-sprint next time.
-________________________________________
-🔹 4. Dealing with Mid-Sprint Change Requests
-Scrum discourages changes mid-sprint unless urgent.
--	I’d coach the PO and stakeholders to channel new requests into the Product Backlog and prioritize them for the next sprint.
--	If change is unavoidable, I’d facilitate a conversation between PO and team to cancel or revise the current sprint if needed (as per Scrum Guide).
-Example: A request to add a wallet feature mid-sprint would be deferred unless it blocks a critical path.
-________________________________________
-🔹 5. Improving Team Performance and Stakeholder Collaboration
--	Implement a Definition of Done (DoD) to ensure clarity in deliverables.
--	Use Velocity charts and Burndown charts to help forecast future sprints and measure team capacity.
--	Encourage direct PO-user feedback loops via beta testing groups.
--	Foster team ownership by rotating demo presenters and encouraging cross-functional pairing.
-Long-term: As the team matures, I would gradually reduce interventions, allowing them to self-organize and deliver consistently.
+---
+
+#### 1. Scrum Roles and Responsibilities
+
+>Scrum 角色与职责
+
+| 英文                                                                                                                                                    | 中文                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| **Product Owner (PO)**: Owns the Product Backlog, prioritizes features such as live tracking, payment gateway integration, and restaurant onboarding. | **产品负责人（PO）**：拥有产品待办列表，负责为诸如实时跟踪、支付网关集成、商家入驻等功能排序优先级。      |
+| **Scrum Master**: Facilitates Scrum ceremonies, removes blockers, shields team from distractions, and coaches on agile best practices.                | **Scrum Master（敏捷教练）**：主导Scrum会议，清除障碍，保护团队专注工作，并指导敏捷最佳实践。  |
+| **Development Team**: Cross-functional members who design, build, test, and deliver a potentially shippable product increment each sprint.            | **开发团队**：由具备多项技能的成员组成，负责每个Sprint中产品的设计、开发、测试与交付一个可发布的增量版本。 |
+| **Application 应用**: Clarify roles during kickoff, revisit responsibilities in retrospectives.                                                         | **实践应用**：在项目启动会上明确角色职责，在回顾会议中复盘职责分工是否清晰。                   |
+
+---
+
+#### 2. Managing and Prioritizing the Product Backlog
+
+>管理与优先排序产品待办列表
+
+| 英文                                                                       | 中文                                         |
+| ------------------------------------------------------------------------ | ------------------------------------------ |
+| The Product Backlog is dynamic and should reflect evolving priorities.   | 产品待办列表是动态的，应及时反映不断变化的优先级。                  |
+| Schedule regular backlog refinement sessions (at least once per sprint). | 每个Sprint至少安排一次待办列表梳理会议。                    |
+| Use MoSCoW or WSJF to help prioritize.                                   | 使用MoSCoW或WSJF方法协助优先级排序。                    |
+| Ensure backlog items follow INVEST principles.                           | 确保待办事项符合 INVEST 原则（独立、可协商、有价值、可估算、小型、可测试）。 |
+| Example 例子: "As a user, I want to track my order live..."                | 例如："作为用户，我希望实时跟踪订单，以便我能及时准备收货。"            |
+
+---
+
+#### 3. Facilitating Scrum Ceremonies
+
+>主持 Scrum 各类会议
+
+| Ceremony                 | 英文                                                                     | 中文                                         |
+| ------------------------ | ---------------------------------------------------------------------- | ------------------------------------------ |
+| **Sprint Planning**      | Team selects refined backlog items and defines a clear Sprint Goal.    | 团队选择已细化的待办事项并设定明确的Sprint目标。                |
+| **Daily Scrum**          | 15-minute stand-up for progress, plans, and blockers. Keep it focused. | 每日15分钟立会，汇报进度、计划与障碍，Scrum Master需引导团队聚焦主题。 |
+| **Sprint Review**        | Stakeholders review increment; align demo with Sprint Goal.            | 邀请干系人评审增量产物，确保演示成果符合Sprint目标。              |
+| **Sprint Retrospective** | Identify successes, failures, and actionable improvements.             | 总结成功与问题，提出可执行改进措施。鼓励安全、开放的反馈文化。            |
+| **Example 应用**           | QA滞后 → 下次中途安排开发协助测试                                                    | 如某次Sprint中测试阶段延误，下次可安排开发中期协助QA以缓解风险。       |
+
+---
+
+#### 4. Dealing with Mid-Sprint Change Requests
+
+>应对 Sprint 中期变更请求
+
+| 英文                                                                          | 中文                                          |
+| --------------------------------------------------------------------------- | ------------------------------------------- |
+| Scrum discourages changes mid-sprint unless urgent.                         | Scrum框架不建议在Sprint中期变更，除非紧急情况。               |
+| Coach PO/stakeholders to add new items to backlog for next sprint.          | 引导PO及干系人将新需求放入产品待办列表，并在下一个Sprint中优先处理。      |
+| If urgent, facilitate team discussion on cancelling or revising the sprint. | 如变更不可避免，协调团队讨论是否需要取消或调整当前Sprint。            |
+| Example 例子: Wallet feature requested mid-sprint.                            | 示例：若在Sprint中期提出添加“钱包功能”，应推迟处理，除非此功能为关键路径依赖。 |
+
+---
+
+#### 5. Improving Team Performance and Stakeholder Collaboration
+
+>提升团队绩效与干系人协作
+
+| 英文                                                                          | 中文                                       |
+| --------------------------------------------------------------------------- | ---------------------------------------- |
+| Implement Definition of Done (DoD) for clear deliverable standards.         | 建立“完成定义”标准（DoD），统一交付成果的完成条件。             |
+| Use Velocity and Burndown charts for forecasting and capacity analysis.     | 使用Velocity图与燃尽图预测进度、评估团队产能。              |
+| Direct PO-user feedback via beta testing loops.                             | 推动PO与终端用户的直接反馈，例如设立Beta测试机制。             |
+| Encourage team ownership: rotate demo presenters, cross-functional pairing. | 鼓励团队主人翁精神：轮换演示者，跨技能配对合作。                 |
+| Long-term: Reduce intervention as team matures.                             | 长远来看，随着团队成熟，逐步减少Scrum Master的干预，促成自组织文化。 |
+
 
 
 
@@ -465,98 +497,226 @@ Your answer should:
 - 描述在每种组合下应用于食品配送应用项目的具体作和工具
 - 通过基于场景的示例展示实际理解
 
-1. Initiating Phase
-🔹 Objective: Define the project, authorize work, and identify stakeholders.
-Key Knowledge Areas:
-•	Integration Management:
-o	Develop the Project Charter outlining scope, objectives, constraints, and high-level budget/timeline.
-o	App example: Charter includes launch goal in 6 months with GPS tracking, payment integration, and 100+ restaurant partners.
-•	Stakeholder Management:
-o	Identify key stakeholders (founders, developers, investors, restaurant partners, end-users).
-o	Create a Stakeholder Register to classify by influence and engagement needs.
-________________________________________
-2. Planning Phase
-🔹 Objective: Develop detailed plans for scope, schedule, cost, quality, risk, resources, communication, procurement, and stakeholder engagement.
-Key Knowledge Areas:
-•	Scope Management:
-o	Define Product Scope (features like live tracking, ratings, loyalty program).
-o	Create a WBS to break features into manageable deliverables.
-•	Schedule Management:
-o	Sequence activities, estimate durations, and define the project timeline using Gantt charts/CPM.
-•	Cost Management:
-o	Use bottom-up estimation to forecast cost: developer salaries, API costs, marketing.
-o	Establish a Cost Baseline.
-•	Quality Management:
-o	Define quality standards (response time < 3s, crash rate < 1%).
-o	Include code review, usability testing, and performance benchmarks in the plan.
-•	Resource Management:
-o	Identify team roles: front-end, back-end devs, QA, UI/UX, support staff.
-o	Develop staffing and resource acquisition plans.
-•	Communications Management:
-o	Build a Communication Plan outlining frequency, format, and channels of reporting.
-o	Ex: Slack for daily dev updates, investor summary every 2 weeks.
-•	Risk Management:
-o	Identify risks like app downtime, vendor delays, poor user adoption.
-o	Build a Risk Register and plan response strategies.
-•	Procurement Management:
-o	Plan contracts for payment gateway, map APIs, SMS providers.
-o	Decide on contract types (fixed-price vs. T&M).
-•	Stakeholder Management (continued):
-o	Develop a Stakeholder Engagement Plan.
-o	Plan investor demos, user feedback forums, and restaurant partner training.
-________________________________________
-3. Executing Phase
-🔹 Objective: Perform the planned activities to produce deliverables.
-Key Knowledge Areas:
-•	Integration Management:
-o	Direct and manage project execution.
-o	Use change control process to handle new feature requests (e.g., adding dark mode).
-•	Resource Management:
-o	Onboard team members.
-o	Manage collaboration using tools like GitHub, Jira, or Notion.
-o	Apply conflict resolution and team development strategies.
-•	Communications Management:
-o	Maintain transparent communication with all stakeholders.
-o	Conduct sprint reviews and demos for stakeholders.
-•	Procurement Management:
-o	Select vendors and issue contracts.
-o	Manage relationships and track delivery of third-party services.
-•	Stakeholder Management:
-o	Ensure stakeholder feedback is incorporated regularly.
-o	Conduct engagement meetings, beta testing feedback loops.
-________________________________________
-4. Monitoring and Controlling Phase
-🔹 Objective: Track, review, and regulate performance. Implement necessary changes.
-Key Knowledge Areas:
-•	Scope Management:
-o	Control scope with formal change approvals.
-o	Ensure no scope creep.
-•	Schedule Management:
-o	Track progress using SPI (Schedule Performance Index).
-o	Re-baseline if needed.
-•	Cost Management:
-o	Monitor expenses and compare CPI (Cost Performance Index).
-o	Adjust resource allocation to control budget.
-•	Quality Management:
-o	Perform Quality Control via UAT, regression testing, bug tracking.
-•	Risk Management:
-o	Monitor identified risks and reassess or trigger mitigation plans.
-o	Update the Risk Register.
-•	Communications Management:
-o	Provide consistent status reports to stakeholders.
-•	Procurement Management:
-o	Validate vendor deliverables and address non-performance.
-•	Stakeholder Management:
-o	Measure stakeholder satisfaction using engagement metrics and feedback.
-________________________________________
-5. Closing Phase
-🔹 Objective: Finalize all activities and formally close the project.
-Key Knowledge Areas:
-•	Integration Management:
-o	Confirm all project work is complete and objectives met.
-o	Close contracts, archive documents, and hand over final product.
-•	Procurement Management:
-o	Verify final vendor deliveries and close contracts.
-•	Stakeholder Management:
-o	Conduct final stakeholder presentation and collect lessons learned.
-o	Capture feedback and recommendations for future projects.
+
+---
+
+### 1. Initiating Phase / 启动阶段
+
+* **Objective**: Define the project, authorize work, and identify stakeholders.
+  **目标**：定义项目、授权工作并识别相关方。
+
+* **Key Knowledge Areas / 关键知识领域**：
+
+  * **Integration Management / 整合管理**：
+
+    * Develop the Project Charter outlining scope, objectives, constraints, and high-level budget/timeline.
+      制定《项目章程》，概述范围、目标、约束条件以及高层预算/时间表。
+    * App example: Charter includes launch goal in 6 months with GPS tracking, payment integration, and 100+ restaurant partners.
+      应用示例：章程中包含6个月内上线的目标，具备GPS追踪、支付集成和100+家餐厅合作。
+  * **Stakeholder Management / 相关方管理**：
+
+    * Identify key stakeholders (founders, developers, investors, restaurant partners, end-users).
+      识别关键相关方（创始人、开发人员、投资者、餐厅合作伙伴、终端用户）。
+    * Create a Stakeholder Register to classify by influence and engagement needs.
+      创建《相关方登记册》，按影响力和参与需求分类。
+
+---
+
+### 2. Planning Phase / 规划阶段
+
+* **Objective**: Develop detailed plans for scope, schedule, cost, quality, risk, resources, communication, procurement, and stakeholder engagement.
+  **目标**：为范围、进度、成本、质量、风险、资源、沟通、采购和相关方参与制定详细计划。
+
+* **Key Knowledge Areas / 关键知识领域**：
+
+  * **Scope Management / 范围管理**：
+
+    * Define Product Scope (features like live tracking, ratings, loyalty program).
+      定义产品范围（如实时追踪、评分系统、忠诚度计划）。
+    * Create a WBS to break features into manageable deliverables.
+      创建WBS，将功能拆解为可管理的可交付成果。
+
+  * **Schedule Management / 进度管理**：
+
+    * Sequence activities, estimate durations, and define the project timeline using Gantt charts/CPM.
+      对活动进行排序、估算持续时间，并使用甘特图/关键路径法定义项目时间表。
+
+  * **Cost Management / 成本管理**：
+
+    * Use bottom-up estimation to forecast cost: developer salaries, API costs, marketing.
+      采用自下而上的估算方法预测成本：开发人员薪资、API费用、市场推广等。
+    * Establish a Cost Baseline.
+      建立成本基准。
+
+  * **Quality Management / 质量管理**：
+
+    * Define quality standards (response time < 3s, crash rate < 1%).
+      定义质量标准（响应时间<3秒，崩溃率<1%）。
+    * Include code review, usability testing, and performance benchmarks in the plan.
+      在计划中包含代码审查、可用性测试和性能基准。
+
+  * **Resource Management / 资源管理**：
+
+    * Identify team roles: front-end, back-end devs, QA, UI/UX, support staff.
+      明确团队角色：前端、后端开发人员，QA，UI/UX，支持人员。
+    * Develop staffing and resource acquisition plans.
+      制定人员配置和资源获取计划。
+
+  * **Communications Management / 沟通管理**：
+
+    * Build a Communication Plan outlining frequency, format, and channels of reporting.
+      制定沟通计划，明确沟通频率、格式和渠道。
+    * Ex: Slack for daily dev updates, investor summary every 2 weeks.
+      示例：开发每日通过Slack更新，投资者每两周收到总结报告。
+
+  * **Risk Management / 风险管理**：
+
+    * Identify risks like app downtime, vendor delays, poor user adoption.
+      识别风险，如应用宕机、供应商延误、用户采用率低等。
+    * Build a Risk Register and plan response strategies.
+      制定风险登记册和响应策略。
+
+  * **Procurement Management / 采购管理**：
+
+    * Plan contracts for payment gateway, map APIs, SMS providers.
+      规划合同需求，如支付网关、地图API、短信服务商。
+    * Decide on contract types (fixed-price vs. T\&M).
+      决定合同类型（固定价格或按时计费）。
+
+  * **Stakeholder Management / 相关方管理（续）**：
+
+    * Develop a Stakeholder Engagement Plan.
+      制定相关方参与计划。
+    * Plan investor demos, user feedback forums, and restaurant partner training.
+      规划投资人演示会、用户反馈论坛和餐厅合作伙伴培训。
+
+---
+
+### 3. Executing Phase / 执行阶段
+
+* **Objective**: Perform the planned activities to produce deliverables.
+  **目标**：执行已规划的活动，交付成果。
+
+* **Key Knowledge Areas / 关键知识领域**：
+
+  * **Integration Management / 整合管理**：
+
+    * Direct and manage project execution.
+      指导和管理项目执行。
+    * Use change control process to handle new feature requests (e.g., adding dark mode).
+      使用变更控制流程处理新功能请求（例如新增“深色模式”）。
+
+  * **Resource Management / 资源管理**：
+
+    * Onboard team members.
+      接纳团队成员。
+    * Manage collaboration using tools like GitHub, Jira, or Notion.
+      使用GitHub、Jira或Notion等工具协作管理。
+    * Apply conflict resolution and team development strategies.
+      应用冲突解决和团队建设策略。
+
+  * **Communications Management / 沟通管理**：
+
+    * Maintain transparent communication with all stakeholders.
+      与所有相关方保持透明沟通。
+    * Conduct sprint reviews and demos for stakeholders.
+      举办Sprint评审和功能演示。
+
+  * **Procurement Management / 采购管理**：
+
+    * Select vendors and issue contracts.
+      选择供应商并发出合同。
+    * Manage relationships and track delivery of third-party services.
+      管理关系并跟踪第三方服务的交付。
+
+  * **Stakeholder Management / 相关方管理**：
+
+    * Ensure stakeholder feedback is incorporated regularly.
+      确保相关方反馈被定期纳入。
+    * Conduct engagement meetings, beta testing feedback loops.
+      举办参与会议和Beta测试反馈循环。
+
+---
+
+### 4. Monitoring and Controlling Phase / 监控与控制阶段
+
+* **Objective**: Track, review, and regulate performance. Implement necessary changes.
+  **目标**：跟踪、审核和调控项目绩效，实施必要变更。
+
+* **Key Knowledge Areas / 关键知识领域**：
+
+  * **Scope Management / 范围管理**：
+
+    * Control scope with formal change approvals.
+      使用正式的变更审批流程控制范围。
+    * Ensure no scope creep.
+      确保没有范围蔓延。
+
+  * **Schedule Management / 进度管理**：
+
+    * Track progress using SPI (Schedule Performance Index).
+      使用SPI（进度绩效指数）跟踪进度。
+    * Re-baseline if needed.
+      必要时重新基准化。
+
+  * **Cost Management / 成本管理**：
+
+    * Monitor expenses and compare CPI (Cost Performance Index).
+      监控支出并对比CPI（成本绩效指数）。
+    * Adjust resource allocation to control budget.
+      调整资源配置控制预算。
+
+  * **Quality Management / 质量管理**：
+
+    * Perform Quality Control via UAT, regression testing, bug tracking.
+      通过UAT、回归测试和缺陷跟踪执行质量控制。
+
+  * **Risk Management / 风险管理**：
+
+    * Monitor identified risks and reassess or trigger mitigation plans.
+      监控已识别风险，并重新评估或触发缓解计划。
+    * Update the Risk Register.
+      更新风险登记册。
+
+  * **Communications Management / 沟通管理**：
+
+    * Provide consistent status reports to stakeholders.
+      向相关方提供一致的状态报告。
+
+  * **Procurement Management / 采购管理**：
+
+    * Validate vendor deliverables and address non-performance.
+      验证供应商交付成果，处理不履约问题。
+
+  * **Stakeholder Management / 相关方管理**：
+
+    * Measure stakeholder satisfaction using engagement metrics and feedback.
+      使用参与度指标和反馈测量相关方满意度。
+
+---
+
+### 5. Closing Phase / 收尾阶段
+
+* **Objective**: Finalize all activities and formally close the project.
+  **目标**：完成所有活动并正式收尾项目。
+
+* **Key Knowledge Areas / 关键知识领域**：
+
+  * **Integration Management / 整合管理**：
+
+    * Confirm all project work is complete and objectives met.
+      确认所有项目工作已完成、目标已实现。
+    * Close contracts, archive documents, and hand over final product.
+      关闭合同、归档文档并交付最终产品。
+
+  * **Procurement Management / 采购管理**：
+
+    * Verify final vendor deliveries and close contracts.
+      验证供应商最终交付内容并关闭合同。
+
+  * **Stakeholder Management / 相关方管理**：
+
+    * Conduct final stakeholder presentation and collect lessons learned.
+      举办最终相关方汇报会并收集经验教训。
+    * Capture feedback and recommendations for future projects.
+      获取反馈与未来项目的改进建议。
